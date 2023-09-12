@@ -1,0 +1,6 @@
+excel_importer.admin_settings:
+  title: 'Excel Importer Settings'
+  description: 'Control the list Content Types to import data into.'
+  route_name: excel_importer.admin_settings
+  parent: system.admin_config_content
+  weight: 10

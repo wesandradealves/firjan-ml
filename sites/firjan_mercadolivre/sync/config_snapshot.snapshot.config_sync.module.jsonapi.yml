@@ -1,0 +1,22 @@
+uuid: bb83347f-d739-4b9e-905a-2de89aee828f
+langcode: en
+status: true
+dependencies:
+  module:
+    - jsonapi
+id: config_sync.module.jsonapi
+snapshotSet: config_sync
+extensionType: module
+extensionName: jsonapi
+items:
+  -
+    collection: ''
+    name: jsonapi.settings
+    data:
+      langcode: en
+      read_only: true
+      maintenance_header_retry_seconds:
+        min: 5
+        max: 10
+      _core:
+        default_config_hash: ve5n0mfUSWWZEFldenHnFrpcL1XKTjzTacerxemPPU4

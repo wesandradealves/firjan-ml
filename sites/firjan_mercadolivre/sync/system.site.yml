@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: en
+uuid: 48049d7b-3308-4590-9696-30b522f3303e
+name: 'Firjan + Mercadolivre'
+mail: noreply@firjan-ml.cityconnect.com.br
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: _mainaccount@firjan-ml.cityconnect.com.br

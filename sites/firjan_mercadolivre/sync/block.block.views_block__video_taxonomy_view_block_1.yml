@@ -1,0 +1,30 @@
+uuid: c339f29c-7a98-40ee-8e2a-7b9cbce03e2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.video_taxonomy_view
+  module:
+    - system
+    - views
+  theme:
+    - firjan_mercadolivre
+id: views_block__video_taxonomy_view_block_1
+theme: firjan_mercadolivre
+region: dashboard
+weight: -7
+provider: null
+plugin: 'views_block:video_taxonomy_view-block_1'
+settings:
+  id: 'views_block:video_taxonomy_view-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /dashboard

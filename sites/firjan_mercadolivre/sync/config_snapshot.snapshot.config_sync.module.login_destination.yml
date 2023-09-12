@@ -1,0 +1,19 @@
+uuid: 11dd38f9-7cd5-44b4-b891-359b54c93cfe
+langcode: en
+status: true
+dependencies:
+  module:
+    - login_destination
+id: config_sync.module.login_destination
+snapshotSet: config_sync
+extensionType: module
+extensionName: login_destination
+items:
+  -
+    collection: ''
+    name: login_destination.settings
+    data:
+      preserve_destination: false
+      immediate_redirect: false
+      _core:
+        default_config_hash: SWXPN5YCm4J7782lXTPqDAneUijUwni85dQTQVjHYtw

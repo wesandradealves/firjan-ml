@@ -1,0 +1,24 @@
+{#
+/**
+    * @file
+    * Default theme implementation for the messages block.
+    *
+    * Removes wrapper elements from block so that empty block does not appear when
+    * there are no messages.
+    *
+    * Available variables:
+    * - content: The content of this block.
+    *
+    * @ingroup themeable
+    */
+#}
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    {% if current_path == '/user/login' or current_path == '/user/password' %}
+        <div class="container pt-5 pb-5 --login">
+            <h1 class="mb-3 d-flex align-items-center justify-content-center"><img height="50" src="{{logo}}" /></h1>
+            {{ content }}
+        </div>
+    {% else %}
+        {{ content }}
+    {% endif %}
+</div>

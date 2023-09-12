@@ -1,0 +1,67 @@
+uuid: dd97c48d-5690-4a1a-bcc5-7a1e1b7731b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_form
+    - field.field.block_content.block_form.body
+    - field.field.block_content.block_form.field_alert_box
+    - field.field.block_content.block_form.field_block_form_custom
+    - field.field.block_content.block_form.field_block_image
+    - field.field.block_content.block_form.field_block_template
+    - field.field.block_content.block_form.field_block_title
+  module:
+    - entity_reference_revisions
+    - image
+    - text
+id: block_content.block_form.default
+targetEntityType: block_content
+bundle: block_form
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_alert_box:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_block_form_custom:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_block_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_block_template:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_block_title: true
+  langcode: true

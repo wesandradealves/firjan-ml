@@ -1,0 +1,19 @@
+uuid: 0fb4f08b-23de-45a1-8acc-51c1ff8ba50d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_externo_dossie
+    - node.type.dossie
+id: node.dossie.field_link_externo_dossie
+field_name: field_link_externo_dossie
+entity_type: node
+bundle: dossie
+label: 'Link externo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

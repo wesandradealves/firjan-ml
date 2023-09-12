@@ -1,0 +1,15 @@
+{
+    "name": "drupal/excel_importer",
+    "description": "Excel data import tool",
+    "type": "drupal-module",
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.15"
+    },
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Tsegaselassie Tadesse",
+            "email": "tsegaselassi@gmail.com"
+        }
+    ]
+}

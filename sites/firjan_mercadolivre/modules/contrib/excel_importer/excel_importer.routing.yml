@@ -1,0 +1,15 @@
+excel_importer.admin_settings:
+  path: '/admin/config/content/excel_importer'
+  defaults:
+    _form: '\Drupal\excel_importer\Form\ExcelImporterSettingsForm'
+    _title: 'Excel Importer Settings'
+  requirements:
+    _permission: 'administer excel_importer'
+
+excel_importer.import_form:
+  path: '/excel-import'
+  defaults:
+    _form: '\Drupal\excel_importer\Form\ExcelImporterForm'
+    _title: 'Import your Excel file'
+  requirements:
+    _permission: 'use excel_importer'

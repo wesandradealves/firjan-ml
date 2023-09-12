@@ -1,0 +1,39 @@
+uuid: 0ff6154a-21ef-4992-a821-1254a12a9a52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.videos_taxonomy.field_descricao
+    - field.field.taxonomy_term.videos_taxonomy.field_videos_taxonomy_descricao
+    - field.field.taxonomy_term.videos_taxonomy.field_videos_taxonomy_image
+    - taxonomy.vocabulary.videos_taxonomy
+  module:
+    - image
+    - text
+id: taxonomy_term.videos_taxonomy.default
+targetEntityType: taxonomy_term
+bundle: videos_taxonomy
+mode: default
+content:
+  field_videos_taxonomy_descricao:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_videos_taxonomy_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  field_descricao: true
+  langcode: true

@@ -1,0 +1,23 @@
+.faq {
+    .accordion-item {
+        padding: 0;
+        &:not(:last-child) {
+            border-bottom: 1px white solid;
+        }
+        .accordion-title  {
+            padding: 0;
+            span {
+                text-transform: lowercase;
+                &::first-letter {
+                    text-transform: capitalize;
+                }
+            }
+            .container {
+                padding: 0;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}

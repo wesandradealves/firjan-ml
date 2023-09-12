@@ -1,0 +1,295 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+use Drupal\views\Views;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File; 
+use Drupal\core\Url; 
+use \Drupal\block\Entity\Block;
+use Drupal\taxonomy\Entity\Term;      
+use Drupal\Core\Link;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\Entity\EntityBase;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
+use Symfony\Component\HttpFoundation\Request;
+use \Drupal\user\Entity\User;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ *
+ * Example on how to alter theme settings form
+ */
+function firjan_mercadolivre_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+  
+  $form['logo_footer'] = array( 
+
+    '#type' => 'managed_file', 
+
+    '#title' => t('Footer Logo'), 
+
+    '#required' => FALSE, 
+
+    '#upload_location' => 'public://', 
+
+    '#default_value' => theme_get_setting('logo_footer'),  
+
+    '#upload_validators' => array( 
+
+      'file_validate_extensions' => array('gif png jpg jpeg'), 
+
+    ), 
+
+  );      
+  $form['header_extra_phrase'] = array( 
+      '#type' => 'textarea', 
+      '#title' => t('Header Extra Phrase'), 
+      '#default_value' => theme_get_setting('header_extra_phrase')
+  );   
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function firjan_mercadolivre_preprocess_node(&$variables)
+ {
+  $variables['logo'] =  theme_get_setting('logo')['url'];  
+}
+
+function firjan_mercadolivre_preprocess_html(&$variables)
+{ 
+  $node = \Drupal::routeMatch()->getParameter('node');  
+  if ($node) {
+    $variables['node_id'] = $node->id();
+  }  
+}
+
+function firjan_mercadolivre_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function firjan_mercadolivre_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Add content type suggestions.
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+  }
+}
+/**
+ * Implements hook_preprocess_block().
+ */
+function firjan_mercadolivre_preprocess_block(&$variables) {
+  global $base_url; 
+  $roles = \Drupal::currentUser()->getRoles();
+
+  $site_config = \Drupal::config('system.site');
+
+  $variables['base_path'] = base_path();
+  $variables['site_name'] = $site_config->get('name');
+  $variables['site_slogan'] = $site_config->get('slogan');
+  $variables['current_path'] = \Drupal::service('path.current')->getPath();
+  $variables['header_extra_phrase'] = theme_get_setting('header_extra_phrase');
+
+  $variables['logo'] =  theme_get_setting('logo')['url'];  
+  
+  $logo_footer = theme_get_setting('logo_footer'); 
+  if($logo_footer){ 
+    $file = File::load($logo_footer[0]); 
+    if($file) {
+      $variables['logo_footer'] = $file->createFileUrl(); 
+    }
+  }      
+  $variables['uid'] = \Drupal::currentUser()->id();
+  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  $variables['content']['#attributes']['block'] = $variables['attributes']['id'];
+  $variables['isAdmin'] = in_array('administrator', $roles);
+
+  $variables['label'] = \Drupal\block\Entity\Block::load($variables['elements']['#id'])->label();
+}
+
+function firjan_mercadolivre_preprocess_block_content(&$variables) {
+  $blockType = $variables['elements']['#block_content']->bundle();
+  $entity = $variables['elements']['#block_content'];
+
+  $blocks = \Drupal\block\Entity\Block::loadMultiple();
+
+  foreach ($blocks as $key => $block) {
+    $uuid = $block->getPlugin()->getDerivativeId();
+
+    if($uuid) {
+      $block_content = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
+      
+      if($block_content == $entity) {
+        $settings = $block->get('settings');
+        $variables['label_display'] = $settings['label_display'];
+        $variables['label'] = $settings['label'];   
+      }
+    }
+  }  
+
+  $variables['login_form'] = FALSE;
+  $variables['uid'] = \Drupal::currentUser()->id();
+  $render = Drupal::service('renderer');
+
+  $form = Drupal::formBuilder()->getForm(Drupal\user\Form\UserLoginForm::class) ; 
+  $variables['login_form'] = $render->renderPlain($form);
+
+  $register_form = \Drupal::service('entity.form_builder')->getForm(\Drupal\user\Entity\User::create([]), 'register', []);
+  $variables['register_form'] = $render->renderPlain($register_form);  
+
+  $user_pass = Drupal::formBuilder()->getForm(Drupal\user\Form\UserPasswordForm::class); 
+  $variables['user_pass'] = $render->renderPlain($user_pass);
+
+  $variables['logo'] =  theme_get_setting('logo')['url'];  
+
+}
+
+function firjan_mercadolivre_preprocess_form(&$vars) {
+  if ($vars['attributes']['id'] == 'search-block-form') {
+    $vars['attributes']['class'][] = 'd-flex align-items-stretch justify-content-end col-12 ps-lg-3 rounded-1 overflow-hidden inline-form';
+  }
+} 
+
+function firjan_mercadolivre_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  if (isset($variables['attributes']['block'])) {
+    $hook = str_replace(array('block-', '-'), array('', '_'), $variables['attributes']['block']);
+    $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
+  }
+}
+ 
+function firjan_mercadolivre_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['#attributes'] = array('class' => 'wrapper-form form');
+
+  if ($form_id == 'user_login_form' || $form_id == 'user_login' || $form_id == 'user_login_block') {
+    $form['name']['#attributes']['placeholder'] = t('CNPJ (Sem pontuação) ou Nome de Usuário');
+    $form['pass']['#attributes']['placeholder'] = t('Senha');
+  } elseif ($form_id == 'user_register_form' ) {
+    $form['account']['pass']['#process'][] = 'firjan_mercadolivre_form_user_register_form_process_pass';
+
+    $form['account']['mail']['#attributes']['placeholder'] = t('E-mail');
+    $form['account']['name']['#attributes']['placeholder'] = t('CNPJ');
+    // $form['account']['name']['#attributes']['readonly'] = TRUE;
+    $form['account']['name']['#attributes']['minlength'] = 14;
+    $form['account']['name']['#attributes']['maxlength'] = 14;
+
+    // $form['#validate'][] = '_form_validation_number_title_validate';
+
+    $form['account']['#cache']['max-age'] = 0;
+
+    $form['actions']['submit']['#value'] = 'Cadastrar';
+
+    $form['account']['notify']['#access'] = FALSE;
+    $form['account']['roles']['#access'] = FALSE;
+    $form['account']['status']['#access'] = FALSE;
+
+    // $form['#validate'][] = 'my_register_form_validate';    
+  } elseif ($form_id == 'user_pass' ) {
+    // $form['account']['pass']['#process'][] = 'firjan_mercadolivre_form_user_register_form_process_pass';
+
+    // $form['mail']['#attributes']['placeholder'] = t('E-mail');
+    $form['name']['#attributes']['placeholder'] = t('CNPJ (Sem pontuação) ou Nome de Usuário');
+    $form['mail']['#markup'] = '';
+
+    // $form['account']['name']['#attributes']['readonly'] = TRUE;
+    $form['name']['#attributes']['minlength'] = '';
+    $form['name']['#attributes']['maxlength'] = 14;
+
+    // $form['#validate'][] = '_form_validation_number_title_validate';
+
+    $form['account']['#cache']['max-age'] = 0;
+
+    $form['actions']['submit']['#value'] = 'Resetar';
+
+    $form['account']['notify']['#access'] = FALSE;
+    $form['account']['roles']['#access'] = FALSE;
+    $form['account']['status']['#access'] = FALSE;
+
+    // $form['#validate'][] = 'my_register_form_validate';    
+  }
+} 
+
+// function _MyModule_user_profile_submit($form, &$form_state)
+// {
+//   dump($form_state);
+//   $response = new RedirectResponse('/?reset=true');
+//   $response->send();
+// }   
+
+// function firjan_mercadolivre_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+//   if ($form_state->get('user_pass_reset')) {
+//     $form['actions']['submit']['#submit'][] = '_MyModule_user_profile_submit';
+//   }
+// }
+
+function firjan_mercadolivre_form_user_register_form_process_pass(&$element, FormStateInterface $form_state, &$complete_form) {
+  $element = \Drupal\Core\Render\Element\PasswordConfirm::processPasswordConfirm($element, $form_state, $complete_form);
+  $element['pass1']['#placeholder'] = t('Senha');
+  $element['pass2']['#placeholder'] = t('Confirme sua senha');
+
+  return $element;
+}
+
+function firjan_mercadolivre_form_contact_message_main_contact_form_alter(&$form, &$form_state, $form_id) {
+    $form['#attributes'] = array('class' => 'contact-form');
+    $form['langcode']['#access'] = $form['mail']['#access'] = $form['name']['#access'] = $form['actions']['preview']['#access'] = $form['copy']['#access'] = $form['message']['#access'] = $form['subject']['#access'] = FALSE;
+    $form['message']['widget'][0]['value']['#title_display'] = $form['field_e_mail']['widget'][0]['value']['#title_display'] = $form['field_sobrenome']['widget'][0]['value']['#title_display'] = $form['field_nome']['widget'][0]['value']['#title_display'] = 'invisible';
+    $form['field_nome']['widget'][0]['value']['#attributes']['placeholder'] = t('Nome');
+    $form['field_sobrenome']['widget'][0]['value']['#attributes']['placeholder'] = t('Sobrenome');
+    $form['field_e_mail']['widget'][0]['value']['#attributes']['placeholder'] = t('E-mail');
+    $form['message']['widget'][0]['value']['#attributes']['placeholder'] = t('Mensagem');
+    $form['actions']['submit']['#value'] = 'Enviar';
+} 
+
+function firjan_mercadolivre_preprocess_form_element(&$variables) { 
+  if(isset($variables['element']) && isset($variables['element']['#title'])) {
+    if(isset($variables['element']['#errors'])) {
+      if($variables['element']['#id'] == 'edit-name') {
+            dump($variables['element']);
+          $variables['error'] = $variables['element']['#errors']->getUntranslatedString();
+          $variables['args'] = $variables['element']['#errors']->getArguments()[':password'];
+          $variables['element']['#errors'] = 'Usuário ou senha não conferem. <a href="'.$variables['args'].'">Esqueceu sua senha?</a><br/>ou faça o <a class="modal_toggler" data-modal="register" rel="modal_toggler" href="javascript:void(0)">cadastro</a>';      
+      } elseif($variables['element']['#id'] == 'edit-mail') {
+        $variables['error'] = $variables['element']['#errors']->getUntranslatedString();
+        $variables['args'] = $variables['element']['#errors']->getArguments()['%value'];      
+        if(str_contains($variables['error'], 'already taken')) {
+          $variables['element']['#errors'] = 'O e-mail '.$variables['args'].' já está sendo utilizado.'; 
+        }
+      } elseif($variables['element']['#id'] == 'edit-name--2') {
+        $variables['error'] = $variables['element']['#errors']->getUntranslatedString();
+        $variables['args'] = $variables['element']['#errors']->getArguments()['%value'];     
+        if(str_contains($variables['error'], 'already taken')) {
+          $variables['element']['#errors'] = 'O CNPJ '.$variables['args'].' já está sendo utilizado.'; 
+        }     
+        
+      }
+    }
+  }
+}
+ 

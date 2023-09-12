@@ -1,0 +1,27 @@
+uuid: 3e8cd10f-16a7-4a1c-9fa2-2fdc45799e7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_arquivo_podcast
+    - node.type.podcast
+  module:
+    - file
+id: node.podcast.field_arquivo_podcast
+field_name: field_arquivo_podcast
+entity_type: node
+bundle: podcast
+label: 'Arquivo Podcast'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: podcast
+  file_extensions: 'wav mp3 mp4 m3u'
+  max_filesize: ''
+  description_field: false
+field_type: file

@@ -1,0 +1,18 @@
+uuid: 43063d33-276d-4831-ab06-1babeeec5af3
+langcode: en
+status: true
+dependencies:
+  module:
+    - username_validation
+id: config_sync.module.username_validation
+snapshotSet: config_sync
+extensionType: module
+extensionName: username_validation
+items:
+  -
+    collection: ''
+    name: username_validation.usernamevalidationconfig
+    data:
+      username_validation: null
+      _core:
+        default_config_hash: AIovxDkp_lDsW1hiPN3QCjOsne6vwcPRntsSYiV2tMo

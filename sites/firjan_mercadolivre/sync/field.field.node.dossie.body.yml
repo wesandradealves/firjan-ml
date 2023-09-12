@@ -1,0 +1,23 @@
+uuid: fa129d92-adf9-47cc-b402-135f57c78697
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.dossie
+  module:
+    - text
+id: node.dossie.body
+field_name: body
+entity_type: node
+bundle: dossie
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

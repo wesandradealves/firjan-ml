@@ -1,0 +1,24 @@
+{
+  "name": "drupal/blocache",
+  "description": "Allows users to individually configure the cache of each block.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/blocache",
+  "authors": [
+    {
+      "name": "Douglas da Rosa Pilar",
+      "homepage": "https://www.drupal.org/u/douglasrpilar",
+      "role": "Maintainer"
+    },
+    {
+      "name": "MMDA",
+      "homepage": "https://www.mmda.com.br",
+      "role": "Co-maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://drupal.org/project/issues/blocache",
+    "source": "https://git.drupalcode.org/project/blocache"
+  },
+  "require": {}
+}

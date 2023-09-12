@@ -1,0 +1,11 @@
+name: Taxonomy Import
+description: A module to import taxonomy using CSV or XML file to a user defined vocabulary
+package: Taxonomy
+type: module
+core_version_requirement: ^8 || ^9 || ^10
+configure: taxonomy_import.config
+
+# Information added by Drupal.org packaging script on 2023-04-06
+version: '2.0.12'
+project: 'taxonomy_import'
+datestamp: 1680814754

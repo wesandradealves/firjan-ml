@@ -1,0 +1,29 @@
+uuid: 8c8bfc57-22f1-4e4e-8b9a-b00ab8bef772
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_cta
+    - field.storage.block_content.field_block_color_theme
+    - taxonomy.vocabulary.video_themes
+id: block_content.block_cta.field_block_color_theme
+field_name: field_block_color_theme
+entity_type: block_content
+bundle: block_cta
+label: 'Color Theme'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      video_themes: video_themes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

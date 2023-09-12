@@ -1,0 +1,20 @@
+uuid: e9b32ccd-4fc3-4fa5-b0b6-db1adda00470
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_distro_ignore
+id: config_sync.module.config_distro_ignore
+snapshotSet: config_sync
+extensionType: module
+extensionName: config_distro_ignore
+items:
+  -
+    collection: ''
+    name: config_distro_ignore.settings
+    data:
+      all_collections: {  }
+      default_collection: {  }
+      custom_collections: {  }
+      _core:
+        default_config_hash: UdewpeuddHj3QRQpqDra3p1Cc9jtYkuxcs-3fT7HyrY

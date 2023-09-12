@@ -1,0 +1,22 @@
+uuid: ac2e7458-d264-45cf-9feb-52e3d2ae2f4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - firjan_mercadolivre
+_core:
+  default_config_hash: kigu8pTxXt1qGR2NJ5HHdC4G2G1wsDrIjLPKBT5wUBc
+id: firjan_mercadolivre_content
+theme: firjan_mercadolivre
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

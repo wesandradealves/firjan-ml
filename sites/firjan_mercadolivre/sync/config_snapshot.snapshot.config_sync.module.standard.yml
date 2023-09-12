@@ -1,0 +1,2364 @@
+uuid: cbe9eedf-4c4a-48ec-ad7f-88acd729ad8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - standard
+id: config_sync.module.standard
+snapshotSet: config_sync
+extensionType: module
+extensionName: standard
+items:
+  -
+    collection: ''
+    name: automated_cron.settings
+    data:
+      interval: 10800
+      _core:
+        default_config_hash: fUksROt4FfkAU9BV4hV2XvhTBSS2nTNrZS4U7S-tKrs
+  -
+    collection: ''
+    name: block.block.bartik_account_menu
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - system.menu.account
+        module:
+          - system
+        theme:
+          - bartik
+      id: bartik_account_menu
+      theme: bartik
+      region: secondary_menu
+      weight: 0
+      provider: null
+      plugin: 'system_menu_block:account'
+      settings:
+        id: 'system_menu_block:account'
+        label: 'User account menu'
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: 1
+        expand_all_items: false
+      visibility: {  }
+      _core:
+        default_config_hash: jzu74Q7R0QWgw8IniA9HZRSb_a8RPak1M0q5J-VGkZI
+  -
+    collection: ''
+    name: block.block.bartik_branding
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - system
+        theme:
+          - bartik
+      id: bartik_branding
+      theme: bartik
+      region: header
+      weight: 0
+      provider: null
+      plugin: system_branding_block
+      settings:
+        id: system_branding_block
+        label: 'Site branding'
+        label_display: '0'
+        provider: system
+        use_site_logo: true
+        use_site_name: true
+        use_site_slogan: true
+      visibility: {  }
+      _core:
+        default_config_hash: d-0emr1mEq7sFKDu5RHUJckvNk62hvIZdRwPEfnJyGg
+  -
+    collection: ''
+    name: block.block.bartik_breadcrumbs
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - system
+        theme:
+          - bartik
+      id: bartik_breadcrumbs
+      theme: bartik
+      region: breadcrumb
+      weight: 0
+      provider: null
+      plugin: system_breadcrumb_block
+      settings:
+        id: system_breadcrumb_block
+        label: Breadcrumbs
+        label_display: '0'
+        provider: system
+      visibility: {  }
+      _core:
+        default_config_hash: y0bXRvKYQQKkf_RVxA3aOPGpIfKKsDOzzrWYCgjxJ9Y
+  -
+    collection: ''
+    name: block.block.bartik_content
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - system
+        theme:
+          - bartik
+      id: bartik_content
+      theme: bartik
+      region: content
+      weight: 0
+      provider: null
+      plugin: system_main_block
+      settings:
+        id: system_main_block
+        label: 'Main page content'
+        label_display: '0'
+        provider: system
+      visibility: {  }
+      _core:
+        default_config_hash: kigu8pTxXt1qGR2NJ5HHdC4G2G1wsDrIjLPKBT5wUBc
+  -
+    collection: ''
+    name: block.block.bartik_footer
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - system.menu.footer
+        module:
+          - system
+        theme:
+          - bartik
+      id: bartik_footer
+      theme: bartik
+      region: footer_fifth
+      weight: 0
+      provider: null
+      plugin: 'system_menu_block:footer'
+      settings:
+        id: 'system_menu_block:footer'
+        label: 'Footer menu'
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: 0
+        expand_all_items: false
+      visibility: {  }
+      _core:
+        default_config_hash: pnCK21YFjH7iB4XDeokSq3N3XSr6qX8BsqMs9nmip6E
+  -
+    collection: ''
+    name: block.block.bartik_help
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - help
+        theme:
+          - bartik
+      id: bartik_help
+      theme: bartik
+      region: content
+      weight: -30
+      provider: null
+      plugin: help_block
+      settings:
+        id: help_block
+        label: Help
+        label_display: '0'
+        provider: help
+      visibility: {  }
+      _core:
+        default_config_hash: '-laWx8WA-ikiIEH3NJQ0hVbjqk3iEuBms91LB0B4IQU'
+  -
+    collection: ''
+    name: block.block.bartik_local_actions
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        theme:
+          - bartik
+      id: bartik_local_actions
+      theme: bartik
+      region: content
+      weight: -20
+      provider: null
+      plugin: local_actions_block
+      settings:
+        id: local_actions_block
+        label: 'Primary admin actions'
+        label_display: '0'
+        provider: core
+      visibility: {  }
+      _core:
+        default_config_hash: XRdb8LpbArVA6CpuuEZxzi50JIdjsJaCCZ5o3fH0Blk
+  -
+    collection: ''
+    name: block.block.bartik_local_tasks
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        theme:
+          - bartik
+      id: bartik_local_tasks
+      theme: bartik
+      region: content
+      weight: -40
+      provider: null
+      plugin: local_tasks_block
+      settings:
+        id: local_tasks_block
+        label: Tabs
+        label_display: '0'
+        provider: core
+        primary: true
+        secondary: true
+      visibility: {  }
+      _core:
+        default_config_hash: Qf2BoIzd9py5AYXZj8fJzCYDyVk1-AWXcu-AqQeDZKA
+  -
+    collection: ''
+    name: block.block.bartik_main_menu
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - system.menu.main
+        module:
+          - system
+        theme:
+          - bartik
+      id: bartik_main_menu
+      theme: bartik
+      region: primary_menu
+      weight: 0
+      provider: null
+      plugin: 'system_menu_block:main'
+      settings:
+        id: 'system_menu_block:main'
+        label: 'Main navigation'
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: 1
+        expand_all_items: false
+      visibility: {  }
+      _core:
+        default_config_hash: _G1IfGESk7WqvVCi7B3VJxhSY0YICgv1OmuVPJqO8bE
+  -
+    collection: ''
+    name: block.block.bartik_messages
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - system
+        theme:
+          - bartik
+      id: bartik_messages
+      theme: bartik
+      region: highlighted
+      weight: 0
+      provider: null
+      plugin: system_messages_block
+      settings:
+        id: system_messages_block
+        label: 'Status messages'
+        label_display: '0'
+        provider: system
+      visibility: {  }
+      _core:
+        default_config_hash: KC12e0aosUnBBs5bd374JVcQjJaFNOSIHzu0dUGf22o
+  -
+    collection: ''
+    name: block.block.bartik_page_title
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        theme:
+          - bartik
+      id: bartik_page_title
+      theme: bartik
+      region: content
+      weight: -50
+      provider: null
+      plugin: page_title_block
+      settings:
+        id: page_title_block
+        label: 'Page title'
+        label_display: '0'
+        provider: core
+      visibility: {  }
+      _core:
+        default_config_hash: ItFhhiUOoeR7oIq73ZaCV7PAYrOwXZ-9fazMzF5DJXM
+  -
+    collection: ''
+    name: block.block.bartik_powered
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - system
+        theme:
+          - bartik
+      id: bartik_powered
+      theme: bartik
+      region: footer_fifth
+      weight: 10
+      provider: null
+      plugin: system_powered_by_block
+      settings:
+        id: system_powered_by_block
+        label: 'Powered by Drupal'
+        label_display: '0'
+        provider: system
+      visibility: {  }
+      _core:
+        default_config_hash: I6Esh8cDlPdl2POZg4MOSRUrQNYA1UNCJCxL2yqT_wc
+  -
+    collection: ''
+    name: block.block.bartik_search
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - search
+        theme:
+          - bartik
+      id: bartik_search
+      theme: bartik
+      region: sidebar_first
+      weight: -1
+      provider: null
+      plugin: search_form_block
+      settings:
+        id: search_form_block
+        label: Search
+        label_display: visible
+        provider: search
+        page_id: node_search
+      visibility: {  }
+      _core:
+        default_config_hash: jQ-C8l3dJPqYCGST1e-kSjR14PDP4wq-iFbp8dMFcRo
+  -
+    collection: ''
+    name: block.block.bartik_tools
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - system.menu.tools
+        module:
+          - system
+        theme:
+          - bartik
+      id: bartik_tools
+      theme: bartik
+      region: sidebar_first
+      weight: 0
+      provider: null
+      plugin: 'system_menu_block:tools'
+      settings:
+        id: 'system_menu_block:tools'
+        label: Tools
+        label_display: visible
+        provider: system
+        level: 1
+        depth: 0
+        expand_all_items: false
+      visibility: {  }
+      _core:
+        default_config_hash: TszJ7dH_11Qjmo_OpMzqznaED4Bvy1XfVnBzTC9LZXE
+  -
+    collection: ''
+    name: block.block.seven_breadcrumbs
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - system
+        theme:
+          - seven
+      id: seven_breadcrumbs
+      theme: seven
+      region: breadcrumb
+      weight: 0
+      provider: null
+      plugin: system_breadcrumb_block
+      settings:
+        id: system_breadcrumb_block
+        label: Breadcrumbs
+        label_display: '0'
+        provider: system
+      visibility: {  }
+      _core:
+        default_config_hash: 2rIN97Rd7-rjv3P4h0-xrZnAgPJHyXFEwrB--sS2_qE
+  -
+    collection: ''
+    name: block.block.seven_content
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - system
+        theme:
+          - seven
+      id: seven_content
+      theme: seven
+      region: content
+      weight: 0
+      provider: null
+      plugin: system_main_block
+      settings:
+        id: system_main_block
+        label: 'Main page content'
+        label_display: '0'
+        provider: system
+      visibility: {  }
+      _core:
+        default_config_hash: 6_eJxtyfANKFE_nfriHKgrARRIPHH88sI6jvQ4EHbBc
+  -
+    collection: ''
+    name: block.block.seven_help
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - help
+        theme:
+          - seven
+      id: seven_help
+      theme: seven
+      region: help
+      weight: 0
+      provider: null
+      plugin: help_block
+      settings:
+        id: help_block
+        label: Help
+        label_display: '0'
+        provider: help
+      visibility: {  }
+      _core:
+        default_config_hash: bYvyEzJ7UcmjXZAYLxb4Qb_J77K9bPbk4ealdap31FY
+  -
+    collection: ''
+    name: block.block.seven_local_actions
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        theme:
+          - seven
+      id: seven_local_actions
+      theme: seven
+      region: content
+      weight: -10
+      provider: null
+      plugin: local_actions_block
+      settings:
+        id: local_actions_block
+        label: 'Primary admin actions'
+        label_display: '0'
+        provider: core
+      visibility: {  }
+      _core:
+        default_config_hash: gv5JXTvQXjlMY6PXrfxzcLMjMg4074WiEQCy7ZSMvK4
+  -
+    collection: ''
+    name: block.block.seven_messages
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - system
+        theme:
+          - seven
+      id: seven_messages
+      theme: seven
+      region: highlighted
+      weight: 0
+      provider: null
+      plugin: system_messages_block
+      settings:
+        id: system_messages_block
+        label: 'Status messages'
+        label_display: '0'
+        provider: system
+      visibility: {  }
+      _core:
+        default_config_hash: bZvFlENVti4PpqT6kqoC86B5_lXp6aE-d4nrvLMU4CY
+  -
+    collection: ''
+    name: block.block.seven_page_title
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        theme:
+          - seven
+      id: seven_page_title
+      theme: seven
+      region: header
+      weight: -30
+      provider: null
+      plugin: page_title_block
+      settings:
+        id: page_title_block
+        label: 'Page title'
+        label_display: '0'
+        provider: core
+      visibility: {  }
+      _core:
+        default_config_hash: P-2PK2v3yJQRI4Mg1RqKQ0Ki0wP_UUErIvahd_MtMVc
+  -
+    collection: ''
+    name: block.block.seven_primary_local_tasks
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        theme:
+          - seven
+      id: seven_primary_local_tasks
+      theme: seven
+      region: header
+      weight: 0
+      provider: null
+      plugin: local_tasks_block
+      settings:
+        id: local_tasks_block
+        label: 'Primary tabs'
+        label_display: '0'
+        provider: core
+        primary: true
+        secondary: false
+      visibility: {  }
+      _core:
+        default_config_hash: ouwsNHI1V3bwV1G1vl0EcbWy8AB9V62vgLOSjTpoCSI
+  -
+    collection: ''
+    name: block.block.seven_secondary_local_tasks
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        theme:
+          - seven
+      id: seven_secondary_local_tasks
+      theme: seven
+      region: pre_content
+      weight: 0
+      provider: null
+      plugin: local_tasks_block
+      settings:
+        id: local_tasks_block
+        label: 'Secondary tabs'
+        label_display: '0'
+        provider: core
+        primary: false
+        secondary: true
+      visibility: {  }
+      _core:
+        default_config_hash: W8ripr8GQI0o3eaaD7lcd4687nUrcHoYdu4yIjzVN3o
+  -
+    collection: ''
+    name: block_content.type.basic
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: basic
+      label: 'Basic block'
+      revision: 0
+      description: 'A basic block contains a title and a body.'
+      _core:
+        default_config_hash: zglzjmYxi0G0ag9MZ02y0LSJOdpWRwJxyP_OvFojFyo
+  -
+    collection: ''
+    name: comment.type.comment
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: comment
+      label: 'Default comments'
+      target_entity_type_id: node
+      description: 'Allows commenting on content'
+      _core:
+        default_config_hash: bqZsN31T2n0UjcbyCpOPi9D2iO0sAOHR7FnEs9qMvaA
+  -
+    collection: ''
+    name: contact.form.feedback
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: feedback
+      label: 'Website feedback'
+      recipients:
+        - admin@example.com
+      reply: ''
+      weight: 0
+      message: 'Your message has been sent.'
+      redirect: ''
+      _core:
+        default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
+  -
+    collection: ''
+    name: core.base_field_override.node.page.promote
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - node.type.page
+      id: node.page.promote
+      field_name: promote
+      entity_type: node
+      bundle: page
+      label: 'Promoted to front page'
+      description: ''
+      required: false
+      translatable: false
+      default_value:
+        -
+          value: 0
+      default_value_callback: ''
+      settings:
+        on_label: 'On'
+        off_label: 'Off'
+      field_type: boolean
+      _core:
+        default_config_hash: fPUEnm4T5zfZRr3ttDUqq7yCDd2uW3clWD-pvos4tlQ
+  -
+    collection: ''
+    name: core.entity_form_display.block_content.basic.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - block_content.type.basic
+          - field.field.block_content.basic.body
+        module:
+          - text
+      id: block_content.basic.default
+      targetEntityType: block_content
+      bundle: basic
+      mode: default
+      content:
+        body:
+          type: text_textarea_with_summary
+          weight: -4
+          region: content
+          settings:
+            rows: 9
+            summary_rows: 3
+            placeholder: ''
+            show_summary: false
+          third_party_settings: {  }
+        info:
+          type: string_textfield
+          weight: -5
+          region: content
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+      hidden: {  }
+      _core:
+        default_config_hash: jAps3FCxvKecABS_tgExbhCZrBLQB3bNPWw18WjE3ss
+  -
+    collection: ''
+    name: core.entity_form_display.comment.comment.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - comment.type.comment
+          - field.field.comment.comment.comment_body
+        module:
+          - text
+      id: comment.comment.default
+      targetEntityType: comment
+      bundle: comment
+      mode: default
+      content:
+        author:
+          weight: -2
+          region: content
+        comment_body:
+          type: text_textarea
+          weight: 11
+          region: content
+          settings:
+            rows: 5
+            placeholder: ''
+          third_party_settings: {  }
+        subject:
+          type: string_textfield
+          weight: 10
+          region: content
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+      hidden: {  }
+      _core:
+        default_config_hash: I0Pa0aQvT_jawlPo9oz4FE3h_ickc55dYKTPl6gILes
+  -
+    collection: ''
+    name: core.entity_form_display.node.article.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.node.article.body
+          - field.field.node.article.comment
+          - field.field.node.article.field_image
+          - field.field.node.article.field_tags
+          - image.style.thumbnail
+          - node.type.article
+        module:
+          - comment
+          - image
+          - path
+          - text
+      id: node.article.default
+      targetEntityType: node
+      bundle: article
+      mode: default
+      content:
+        body:
+          type: text_textarea_with_summary
+          weight: 1
+          region: content
+          settings:
+            rows: 9
+            summary_rows: 3
+            placeholder: ''
+            show_summary: false
+          third_party_settings: {  }
+        comment:
+          type: comment_default
+          weight: 20
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        created:
+          type: datetime_timestamp
+          weight: 10
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        field_image:
+          type: image_image
+          weight: 4
+          region: content
+          settings:
+            progress_indicator: throbber
+            preview_image_style: thumbnail
+          third_party_settings: {  }
+        field_tags:
+          type: entity_reference_autocomplete_tags
+          weight: 3
+          region: content
+          settings:
+            match_operator: CONTAINS
+            match_limit: 10
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+        path:
+          type: path
+          weight: 30
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        promote:
+          type: boolean_checkbox
+          weight: 15
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+        status:
+          type: boolean_checkbox
+          weight: 120
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+        sticky:
+          type: boolean_checkbox
+          weight: 16
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+        title:
+          type: string_textfield
+          weight: 0
+          region: content
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+        uid:
+          type: entity_reference_autocomplete
+          weight: 5
+          region: content
+          settings:
+            match_operator: CONTAINS
+            match_limit: 10
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+      hidden: {  }
+      _core:
+        default_config_hash: Pzq9mzrsfoPf775qgEU_SUbHSro9pv1ga-Euh1Ykd_k
+  -
+    collection: ''
+    name: core.entity_form_display.node.page.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.node.page.body
+          - node.type.page
+        module:
+          - path
+          - text
+      id: node.page.default
+      targetEntityType: node
+      bundle: page
+      mode: default
+      content:
+        body:
+          type: text_textarea_with_summary
+          weight: 31
+          region: content
+          settings:
+            rows: 9
+            summary_rows: 3
+            placeholder: ''
+            show_summary: false
+          third_party_settings: {  }
+        created:
+          type: datetime_timestamp
+          weight: 10
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        path:
+          type: path
+          weight: 30
+          region: content
+          settings: {  }
+          third_party_settings: {  }
+        promote:
+          type: boolean_checkbox
+          weight: 15
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+        status:
+          type: boolean_checkbox
+          weight: 120
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+        sticky:
+          type: boolean_checkbox
+          weight: 16
+          region: content
+          settings:
+            display_label: true
+          third_party_settings: {  }
+        title:
+          type: string_textfield
+          weight: -5
+          region: content
+          settings:
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+        uid:
+          type: entity_reference_autocomplete
+          weight: 5
+          region: content
+          settings:
+            match_operator: CONTAINS
+            match_limit: 10
+            size: 60
+            placeholder: ''
+          third_party_settings: {  }
+      hidden: {  }
+      _core:
+        default_config_hash: SfpLhPExzvR0MgFp0Wp7CrmgEnhcqQ-fXIWFhbf4ue0
+  -
+    collection: ''
+    name: core.entity_form_display.user.user.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.user.user.user_picture
+          - image.style.thumbnail
+        module:
+          - image
+          - user
+      id: user.user.default
+      targetEntityType: user
+      bundle: user
+      mode: default
+      content:
+        account:
+          weight: -10
+          region: content
+        contact:
+          weight: 5
+          region: content
+        language:
+          weight: 0
+          region: content
+        timezone:
+          weight: 6
+          region: content
+        user_picture:
+          type: image_image
+          weight: -1
+          region: content
+          settings:
+            progress_indicator: throbber
+            preview_image_style: thumbnail
+          third_party_settings: {  }
+      hidden: {  }
+      _core:
+        default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
+  -
+    collection: ''
+    name: core.entity_view_display.block_content.basic.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - block_content.type.basic
+          - field.field.block_content.basic.body
+        module:
+          - text
+      id: block_content.basic.default
+      targetEntityType: block_content
+      bundle: basic
+      mode: default
+      content:
+        body:
+          type: text_default
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          weight: 0
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: hBNNDTFwakREOTa6GGMqN899Iyrii0hInwSJtQ7Kj30
+  -
+    collection: ''
+    name: core.entity_view_display.comment.comment.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - comment.type.comment
+          - field.field.comment.comment.comment_body
+        module:
+          - text
+      id: comment.comment.default
+      targetEntityType: comment
+      bundle: comment
+      mode: default
+      content:
+        comment_body:
+          type: text_default
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          weight: 0
+          region: content
+        links:
+          weight: 100
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: aBQUGsQ46M4048fIlFuTXwl2zV0j2cJX89CTUobh9hA
+  -
+    collection: ''
+    name: core.entity_view_display.node.article.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_display.comment.comment.default
+          - field.field.node.article.body
+          - field.field.node.article.comment
+          - field.field.node.article.field_image
+          - field.field.node.article.field_tags
+          - image.style.wide
+          - node.type.article
+        module:
+          - comment
+          - image
+          - text
+          - user
+      id: node.article.default
+      targetEntityType: node
+      bundle: article
+      mode: default
+      content:
+        body:
+          type: text_default
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          weight: 0
+          region: content
+        comment:
+          type: comment_default
+          label: above
+          settings:
+            view_mode: default
+            pager_id: 0
+          third_party_settings: {  }
+          weight: 110
+          region: content
+        field_image:
+          type: image
+          label: hidden
+          settings:
+            image_style: wide
+            image_link: ''
+            image_loading:
+              attribute: lazy
+          third_party_settings: {  }
+          weight: -1
+          region: content
+        field_tags:
+          type: entity_reference_label
+          label: above
+          settings:
+            link: true
+          third_party_settings: {  }
+          weight: 10
+          region: content
+        links:
+          settings: {  }
+          third_party_settings: {  }
+          weight: 100
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
+  -
+    collection: ''
+    name: core.entity_view_display.node.article.rss
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.node.rss
+          - field.field.node.article.body
+          - field.field.node.article.comment
+          - field.field.node.article.field_image
+          - field.field.node.article.field_tags
+          - node.type.article
+        module:
+          - user
+      id: node.article.rss
+      targetEntityType: node
+      bundle: article
+      mode: rss
+      content:
+        links:
+          weight: 100
+          region: content
+      hidden:
+        body: true
+        comment: true
+        field_image: true
+        field_tags: true
+      _core:
+        default_config_hash: 2rIr6K5Q0UQ9khg0zE_CK-PtJH76UL-BDDZcZnZzwCc
+  -
+    collection: ''
+    name: core.entity_view_display.node.article.teaser
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.node.teaser
+          - field.field.node.article.body
+          - field.field.node.article.comment
+          - field.field.node.article.field_image
+          - field.field.node.article.field_tags
+          - image.style.medium
+          - node.type.article
+        module:
+          - image
+          - text
+          - user
+      id: node.article.teaser
+      targetEntityType: node
+      bundle: article
+      mode: teaser
+      content:
+        body:
+          type: text_summary_or_trimmed
+          label: hidden
+          settings:
+            trim_length: 600
+          third_party_settings: {  }
+          weight: 0
+          region: content
+        field_image:
+          type: image
+          label: hidden
+          settings:
+            image_style: medium
+            image_link: content
+            image_loading:
+              attribute: lazy
+          third_party_settings: {  }
+          weight: -1
+          region: content
+        field_tags:
+          type: entity_reference_label
+          label: above
+          settings:
+            link: true
+          third_party_settings: {  }
+          weight: 10
+          region: content
+        links:
+          weight: 100
+          region: content
+      hidden:
+        comment: true
+        field_image: true
+        field_tags: true
+      _core:
+        default_config_hash: 83jX5ChAGdMzOxiDA_B1NjgebVMuD8lNVDgClg_QVP8
+  -
+    collection: ''
+    name: core.entity_view_display.node.page.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.node.page.body
+          - node.type.page
+        module:
+          - text
+          - user
+      id: node.page.default
+      targetEntityType: node
+      bundle: page
+      mode: default
+      content:
+        body:
+          type: text_default
+          label: hidden
+          settings: {  }
+          third_party_settings: {  }
+          weight: 100
+          region: content
+        links:
+          weight: 101
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
+  -
+    collection: ''
+    name: core.entity_view_display.node.page.teaser
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.node.teaser
+          - field.field.node.page.body
+          - node.type.page
+        module:
+          - text
+          - user
+      id: node.page.teaser
+      targetEntityType: node
+      bundle: page
+      mode: teaser
+      content:
+        body:
+          type: text_summary_or_trimmed
+          label: hidden
+          settings:
+            trim_length: 600
+          third_party_settings: {  }
+          weight: 100
+          region: content
+        links:
+          weight: 101
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: 8BgdRtLbtQ0F__o0FHSH0Mx5fvXOra9tfT1GmNKbRYw
+  -
+    collection: ''
+    name: core.entity_view_display.user.user.compact
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - core.entity_view_mode.user.compact
+          - field.field.user.user.user_picture
+          - image.style.thumbnail
+        module:
+          - image
+          - user
+      id: user.user.compact
+      targetEntityType: user
+      bundle: user
+      mode: compact
+      content:
+        user_picture:
+          type: image
+          label: hidden
+          settings:
+            image_style: thumbnail
+            image_link: content
+            image_loading:
+              attribute: lazy
+          third_party_settings: {  }
+          weight: 0
+          region: content
+      hidden:
+        member_for: true
+      _core:
+        default_config_hash: 00zr_RBdTjPjBGITD3h4c1ESQZimjdVCcHGt1trLqIY
+  -
+    collection: ''
+    name: core.entity_view_display.user.user.default
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.field.user.user.user_picture
+          - image.style.thumbnail
+        module:
+          - image
+          - user
+      id: user.user.default
+      targetEntityType: user
+      bundle: user
+      mode: default
+      content:
+        member_for:
+          weight: 5
+          region: content
+        user_picture:
+          type: image
+          label: hidden
+          settings:
+            image_style: thumbnail
+            image_link: content
+            image_loading:
+              attribute: lazy
+          third_party_settings: {  }
+          weight: 0
+          region: content
+      hidden: {  }
+      _core:
+        default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
+  -
+    collection: ''
+    name: core.menu.static_menu_link_overrides
+    data:
+      definitions:
+        contact__site_page:
+          menu_name: footer
+          parent: ''
+          weight: 0
+          expanded: false
+          enabled: true
+      _core:
+        default_config_hash: CXhei_vpaZk-3f_Mj2cH0YmpK-ZpKHoSzVA3yZrDq0g
+  -
+    collection: ''
+    name: editor.editor.basic_html
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - filter.format.basic_html
+        module:
+          - ckeditor
+      format: basic_html
+      editor: ckeditor
+      settings:
+        toolbar:
+          rows:
+            -
+              -
+                name: Formatting
+                items:
+                  - Bold
+                  - Italic
+              -
+                name: Linking
+                items:
+                  - DrupalLink
+                  - DrupalUnlink
+              -
+                name: Lists
+                items:
+                  - BulletedList
+                  - NumberedList
+              -
+                name: Media
+                items:
+                  - Blockquote
+                  - DrupalImage
+              -
+                name: 'Block Formatting'
+                items:
+                  - Format
+              -
+                name: Tools
+                items:
+                  - Source
+        plugins: {  }
+      image_upload:
+        status: true
+        scheme: public
+        directory: inline-images
+        max_size: ''
+        max_dimensions:
+          width: 0
+          height: 0
+      _core:
+        default_config_hash: YDLLsjMDd08L1yOEjafHLrdFMWV0HnM9yKtYSDGJErc
+  -
+    collection: ''
+    name: editor.editor.full_html
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - filter.format.full_html
+        module:
+          - ckeditor
+      format: full_html
+      editor: ckeditor
+      settings:
+        toolbar:
+          rows:
+            -
+              -
+                name: Formatting
+                items:
+                  - Bold
+                  - Italic
+                  - Strike
+                  - Superscript
+                  - Subscript
+                  - '-'
+                  - RemoveFormat
+              -
+                name: Linking
+                items:
+                  - DrupalLink
+                  - DrupalUnlink
+              -
+                name: Lists
+                items:
+                  - BulletedList
+                  - NumberedList
+              -
+                name: Media
+                items:
+                  - Blockquote
+                  - DrupalImage
+                  - Table
+                  - HorizontalRule
+              -
+                name: 'Block Formatting'
+                items:
+                  - Format
+              -
+                name: Tools
+                items:
+                  - ShowBlocks
+                  - Source
+        plugins: {  }
+      image_upload:
+        status: true
+        scheme: public
+        directory: inline-images
+        max_size: ''
+        max_dimensions:
+          width: 0
+          height: 0
+      _core:
+        default_config_hash: wAnz2zfSYzdcolupgqQxXhngIscFdA_Y53q7FcwXpU0
+  -
+    collection: ''
+    name: field.field.block_content.basic.body
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - block_content.type.basic
+          - field.storage.block_content.body
+        module:
+          - text
+      id: block_content.basic.body
+      field_name: body
+      entity_type: block_content
+      bundle: basic
+      label: Body
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        display_summary: false
+        required_summary: false
+      field_type: text_with_summary
+      _core:
+        default_config_hash: foetbaMhlB6uLc2bn-PESvaPkbuDWj0MEjpQVwQiP-o
+  -
+    collection: ''
+    name: field.field.comment.comment.comment_body
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - comment.type.comment
+          - field.storage.comment.comment_body
+        module:
+          - text
+      id: comment.comment.comment_body
+      field_name: comment_body
+      entity_type: comment
+      bundle: comment
+      label: Comment
+      description: ''
+      required: true
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings: {  }
+      field_type: text_long
+      _core:
+        default_config_hash: TmAKjNrJ7RR60YpqvJq_QqEewYe_S8Kd23n8VRCqiWs
+  -
+    collection: ''
+    name: field.field.node.article.body
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.body
+          - node.type.article
+        module:
+          - text
+      id: node.article.body
+      field_name: body
+      entity_type: node
+      bundle: article
+      label: Body
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        display_summary: true
+        required_summary: false
+      field_type: text_with_summary
+      _core:
+        default_config_hash: IjZnOLWk1Pjq3WRg2pLSA1ERh7Po7izCq_p6UztZr2c
+  -
+    collection: ''
+    name: field.field.node.article.comment
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.comment
+          - node.type.article
+        module:
+          - comment
+      id: node.article.comment
+      field_name: comment
+      entity_type: node
+      bundle: article
+      label: Comments
+      description: ''
+      required: false
+      translatable: true
+      default_value:
+        -
+          status: 2
+          cid: 0
+          last_comment_timestamp: 0
+          last_comment_name: null
+          last_comment_uid: 0
+          comment_count: 0
+      default_value_callback: ''
+      settings:
+        default_mode: 1
+        per_page: 50
+        anonymous: 0
+        form_location: true
+        preview: 1
+      field_type: comment
+      _core:
+        default_config_hash: UqXlkKC4v2-bDfWx4zcXQrD5YIi3d5byENEmWv-G_Uc
+  -
+    collection: ''
+    name: field.field.node.article.field_image
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_image
+          - node.type.article
+        module:
+          - image
+      id: node.article.field_image
+      field_name: field_image
+      entity_type: node
+      bundle: article
+      label: Image
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        handler: 'default:file'
+        handler_settings: {  }
+        file_directory: '[date:custom:Y]-[date:custom:m]'
+        file_extensions: 'png gif jpg jpeg'
+        max_filesize: ''
+        max_resolution: ''
+        min_resolution: ''
+        alt_field: true
+        alt_field_required: true
+        title_field: false
+        title_field_required: false
+        default_image:
+          uuid: null
+          alt: ''
+          title: ''
+          width: null
+          height: null
+      field_type: image
+      _core:
+        default_config_hash: PmVL51L3A9QGbPLoeLHw5epAPszeZRasCeC3imeeDRQ
+  -
+    collection: ''
+    name: field.field.node.article.field_tags
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.field_tags
+          - node.type.article
+          - taxonomy.vocabulary.tags
+      id: node.article.field_tags
+      field_name: field_tags
+      entity_type: node
+      bundle: article
+      label: Tags
+      description: 'Enter a comma-separated list. For example: Amsterdam, Mexico City, "Cleveland, Ohio"'
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        handler: 'default:taxonomy_term'
+        handler_settings:
+          target_bundles:
+            tags: tags
+          sort:
+            field: _none
+          auto_create: true
+      field_type: entity_reference
+      _core:
+        default_config_hash: QdUgf_beeoaPiyKorFv0q1fcJpWH_uZTqe_xoVJacrw
+  -
+    collection: ''
+    name: field.field.node.page.body
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.node.body
+          - node.type.page
+        module:
+          - text
+      id: node.page.body
+      field_name: body
+      entity_type: node
+      bundle: page
+      label: Body
+      description: ''
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        display_summary: true
+        required_summary: false
+      field_type: text_with_summary
+      _core:
+        default_config_hash: KgVkxLl_K3E3lvN6CEoWQIDT0V8J4Mv-fVYrAIc7-FE
+  -
+    collection: ''
+    name: field.field.user.user.user_picture
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - field.storage.user.user_picture
+        module:
+          - image
+          - user
+      id: user.user.user_picture
+      field_name: user_picture
+      entity_type: user
+      bundle: user
+      label: Picture
+      description: 'Your virtual face or picture.'
+      required: false
+      translatable: true
+      default_value: {  }
+      default_value_callback: ''
+      settings:
+        handler: 'default:file'
+        handler_settings: {  }
+        file_directory: 'pictures/[date:custom:Y]-[date:custom:m]'
+        file_extensions: 'png gif jpg jpeg'
+        max_filesize: ''
+        max_resolution: ''
+        min_resolution: ''
+        alt_field: false
+        alt_field_required: false
+        title_field: false
+        title_field_required: false
+        default_image:
+          uuid: null
+          alt: ''
+          title: ''
+          width: null
+          height: null
+      field_type: image
+      _core:
+        default_config_hash: twhm-ZOwSVkUjuLI_pQsaPo_pVLcqFfDmY-ojfqw0yk
+  -
+    collection: ''
+    name: field.storage.node.comment
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - comment
+          - node
+      id: node.comment
+      field_name: comment
+      entity_type: node
+      type: comment
+      settings:
+        comment_type: comment
+      module: comment
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: ktCna9xmWvYZIUfOCUyDQvedn5RtnS4CRmEIwNmvYjc
+  -
+    collection: ''
+    name: field.storage.node.field_image
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - file
+          - image
+          - node
+      id: node.field_image
+      field_name: field_image
+      entity_type: node
+      type: image
+      settings:
+        target_type: file
+        display_field: false
+        display_default: false
+        uri_scheme: public
+        default_image:
+          uuid: null
+          alt: ''
+          title: ''
+          width: null
+          height: null
+      module: image
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes:
+        target_id:
+          - target_id
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: EymokncRIZ7SgQT2IdOQhQJicX4nNc0K89ik-LxmOHE
+  -
+    collection: ''
+    name: field.storage.node.field_tags
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - node
+          - taxonomy
+      id: node.field_tags
+      field_name: field_tags
+      entity_type: node
+      type: entity_reference
+      settings:
+        target_type: taxonomy_term
+      module: core
+      locked: false
+      cardinality: -1
+      translatable: true
+      indexes: {  }
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: WpOE_bs8Bs_HY2ns7n2r__de-xno0-Bxkqep5-MsHAs
+  -
+    collection: ''
+    name: field.storage.user.user_picture
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - file
+          - image
+          - user
+      id: user.user_picture
+      field_name: user_picture
+      entity_type: user
+      type: image
+      settings:
+        target_type: file
+        display_field: false
+        display_default: false
+        uri_scheme: public
+        default_image:
+          uuid: null
+          alt: ''
+          title: ''
+          width: null
+          height: null
+      module: image
+      locked: false
+      cardinality: 1
+      translatable: true
+      indexes:
+        target_id:
+          - target_id
+      persist_with_no_fields: false
+      custom_storage: false
+      _core:
+        default_config_hash: 0q8-mw8y-Ls5I578sIPQFLp4ljpH7WvVYpzY-I9O-8E
+  -
+    collection: ''
+    name: filter.format.basic_html
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - editor
+      name: 'Basic HTML'
+      format: basic_html
+      weight: 0
+      roles:
+        - authenticated
+      filters:
+        filter_html:
+          id: filter_html
+          provider: filter
+          status: true
+          weight: -10
+          settings:
+            allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt height width data-entity-type data-entity-uuid data-align data-caption>'
+            filter_html_help: false
+            filter_html_nofollow: false
+        filter_align:
+          id: filter_align
+          provider: filter
+          status: true
+          weight: 7
+          settings: {  }
+        filter_caption:
+          id: filter_caption
+          provider: filter
+          status: true
+          weight: 8
+          settings: {  }
+        filter_html_image_secure:
+          id: filter_html_image_secure
+          provider: filter
+          status: true
+          weight: 9
+          settings: {  }
+        editor_file_reference:
+          id: editor_file_reference
+          provider: editor
+          status: true
+          weight: 11
+          settings: {  }
+      _core:
+        default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
+  -
+    collection: ''
+    name: filter.format.full_html
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        module:
+          - editor
+      name: 'Full HTML'
+      format: full_html
+      weight: 2
+      roles:
+        - administrator
+      filters:
+        filter_align:
+          id: filter_align
+          provider: filter
+          status: true
+          weight: 8
+          settings: {  }
+        filter_caption:
+          id: filter_caption
+          provider: filter
+          status: true
+          weight: 9
+          settings: {  }
+        filter_htmlcorrector:
+          id: filter_htmlcorrector
+          provider: filter
+          status: true
+          weight: 10
+          settings: {  }
+        editor_file_reference:
+          id: editor_file_reference
+          provider: editor
+          status: true
+          weight: 11
+          settings: {  }
+      _core:
+        default_config_hash: WNeK5FbcY8pXgEpbD_KgRzlF1-5PL3BJXwqaBctPTqw
+  -
+    collection: ''
+    name: filter.format.restricted_html
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      name: 'Restricted HTML'
+      format: restricted_html
+      weight: 1
+      roles:
+        - anonymous
+      filters:
+        filter_html:
+          id: filter_html
+          provider: filter
+          status: true
+          weight: -10
+          settings:
+            allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id>'
+            filter_html_help: true
+            filter_html_nofollow: false
+        filter_autop:
+          id: filter_autop
+          provider: filter
+          status: true
+          weight: 0
+          settings: {  }
+        filter_url:
+          id: filter_url
+          provider: filter
+          status: true
+          weight: 0
+          settings:
+            filter_url_length: 72
+      _core:
+        default_config_hash: oz6NyPDAB4HB6N9hgH2LwNVtCd-sXbMG1fbn5KsRIDI
+  -
+    collection: ''
+    name: node.settings
+    data:
+      use_admin_theme: true
+      _core:
+        default_config_hash: W0cgFPhPJ3gAdqm06-az48BLf5MVcoZVS0HdByoofi0
+  -
+    collection: ''
+    name: node.type.article
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      name: Article
+      type: article
+      description: 'Use <em>articles</em> for time-sensitive content like news, press releases or blog posts.'
+      help: ''
+      new_revision: true
+      preview_mode: 1
+      display_submitted: true
+      _core:
+        default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
+  -
+    collection: ''
+    name: node.type.page
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      name: 'Basic page'
+      type: page
+      description: 'Use <em>basic pages</em> for your static content, such as an ''About us'' page.'
+      help: ''
+      new_revision: true
+      preview_mode: 1
+      display_submitted: false
+      _core:
+        default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
+  -
+    collection: ''
+    name: rdf.mapping.comment.comment
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - comment.type.comment
+        module:
+          - comment
+      id: comment.comment
+      targetEntityType: comment
+      bundle: comment
+      types:
+        - 'schema:Comment'
+      fieldMappings:
+        subject:
+          properties:
+            - 'schema:name'
+        created:
+          properties:
+            - 'schema:dateCreated'
+          datatype_callback:
+            callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+        changed:
+          properties:
+            - 'schema:dateModified'
+          datatype_callback:
+            callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+        comment_body:
+          properties:
+            - 'schema:text'
+        uid:
+          properties:
+            - 'schema:author'
+          mapping_type: rel
+      _core:
+        default_config_hash: uETe6XupRGKDForx2MpY0pMOEu6CzGgdCAZZOKkbgmk
+  -
+    collection: ''
+    name: rdf.mapping.node.article
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - node.type.article
+        module:
+          - node
+      id: node.article
+      targetEntityType: node
+      bundle: article
+      types:
+        - 'schema:Article'
+      fieldMappings:
+        title:
+          properties:
+            - 'schema:name'
+        created:
+          properties:
+            - 'schema:dateCreated'
+          datatype_callback:
+            callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+        changed:
+          properties:
+            - 'schema:dateModified'
+          datatype_callback:
+            callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+        body:
+          properties:
+            - 'schema:text'
+        uid:
+          properties:
+            - 'schema:author'
+        comment:
+          properties:
+            - 'schema:comment'
+          mapping_type: rel
+        comment_count:
+          properties:
+            - 'schema:interactionCount'
+          datatype_callback:
+            callable: 'Drupal\rdf\SchemaOrgDataConverter::interactionCount'
+            arguments:
+              interaction_type: UserComments
+        field_image:
+          properties:
+            - 'schema:image'
+        field_tags:
+          properties:
+            - 'schema:about'
+      _core:
+        default_config_hash: IdobJe379eDudt7-bXFfJjF7pDqFl-kYxVFtpWrgkro
+  -
+    collection: ''
+    name: rdf.mapping.node.page
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - node.type.page
+        module:
+          - node
+      id: node.page
+      targetEntityType: node
+      bundle: page
+      types:
+        - 'schema:WebPage'
+      fieldMappings:
+        title:
+          properties:
+            - 'schema:name'
+        created:
+          properties:
+            - 'schema:dateCreated'
+          datatype_callback:
+            callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+        changed:
+          properties:
+            - 'schema:dateModified'
+          datatype_callback:
+            callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
+        body:
+          properties:
+            - 'schema:text'
+        uid:
+          properties:
+            - 'schema:author'
+          mapping_type: rel
+        comment_count:
+          properties:
+            - 'schema:interactionCount'
+          datatype_callback:
+            callable: 'Drupal\rdf\SchemaOrgDataConverter::interactionCount'
+            arguments:
+              interaction_type: UserComments
+      _core:
+        default_config_hash: 32LxRnl4Wesvzqyfp7HnD0-U9-wxrLBn76pqY5XGNAE
+  -
+    collection: ''
+    name: rdf.mapping.taxonomy_term.tags
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - taxonomy.vocabulary.tags
+        module:
+          - taxonomy
+      id: taxonomy_term.tags
+      targetEntityType: taxonomy_term
+      bundle: tags
+      types:
+        - 'schema:Thing'
+      fieldMappings:
+        name:
+          properties:
+            - 'schema:name'
+        description:
+          properties:
+            - 'schema:description'
+      _core:
+        default_config_hash: o5duwyS1CTHx3tYOZhuu91kspe8VQjQsnwZjAJv9njk
+  -
+    collection: ''
+    name: system.cron
+    data:
+      threshold:
+        requirements_warning: 172800
+        requirements_error: 1209600
+      logging: 1
+      _core:
+        default_config_hash: 5Pw921y1EPfFN98wykliBBLArm51pC-SmrXeYCe7d0Y
+  -
+    collection: ''
+    name: system.site
+    data:
+      langcode: en
+      uuid: ''
+      name: ''
+      mail: ''
+      slogan: ''
+      page:
+        403: ''
+        404: ''
+        front: /node
+      admin_compact_mode: false
+      weight_select_max: 100
+      default_langcode: en
+      _core:
+        default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+  -
+    collection: ''
+    name: system.theme
+    data:
+      admin: claro
+      default: olivero
+      _core:
+        default_config_hash: eJ529VM1gSIA_vgTy2PdiDvJuG0xhSxfQjCyl5WKlv4
+  -
+    collection: ''
+    name: taxonomy.vocabulary.tags
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      name: Tags
+      vid: tags
+      description: 'Use tags to group articles on similar topics into categories.'
+      weight: 0
+      _core:
+        default_config_hash: yoNVreoTdTZTY7GuE8fI9Jmxqdz8vlo4ZJKixMNSosw
+  -
+    collection: ''
+    name: user.role.administrator
+    data:
+      langcode: en
+      status: true
+      dependencies: {  }
+      id: administrator
+      label: Administrator
+      weight: 3
+      is_admin: true
+      permissions: {  }
+      _core:
+        default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
+  -
+    collection: ''
+    name: user.role.anonymous
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - filter.format.restricted_html
+        module:
+          - comment
+          - contact
+          - filter
+          - search
+          - system
+      id: anonymous
+      label: 'Anonymous user'
+      weight: 0
+      is_admin: false
+      permissions:
+        - 'access comments'
+        - 'access content'
+        - 'access site-wide contact form'
+        - 'search content'
+        - 'use text format restricted_html'
+      _core:
+        default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+  -
+    collection: ''
+    name: user.role.authenticated
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - filter.format.basic_html
+        module:
+          - comment
+          - contact
+          - filter
+          - search
+          - shortcut
+          - system
+      id: authenticated
+      label: 'Authenticated user'
+      weight: 1
+      is_admin: false
+      permissions:
+        - 'access comments'
+        - 'access content'
+        - 'access shortcuts'
+        - 'access site-wide contact form'
+        - 'post comments'
+        - 'search content'
+        - 'skip comment approval'
+        - 'use text format basic_html'
+      _core:
+        default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
+  -
+    collection: ''
+    name: user.role.content_editor
+    data:
+      langcode: en
+      status: true
+      dependencies:
+        config:
+          - node.type.article
+          - node.type.page
+          - taxonomy.vocabulary.tags
+        module:
+          - comment
+          - contextual
+          - file
+          - node
+          - path
+          - system
+          - taxonomy
+          - toolbar
+          - tour
+      id: content_editor
+      label: 'Content editor'
+      weight: 2
+      is_admin: false
+      permissions:
+        - 'access administration pages'
+        - 'access content overview'
+        - 'access contextual links'
+        - 'access files overview'
+        - 'access toolbar'
+        - 'access tour'
+        - 'administer url aliases'
+        - 'create article content'
+        - 'create page content'
+        - 'create terms in tags'
+        - 'create url aliases'
+        - 'delete article revisions'
+        - 'delete own article content'
+        - 'delete own page content'
+        - 'delete page revisions'
+        - 'edit own article content'
+        - 'edit own comments'
+        - 'edit own page content'
+        - 'edit terms in tags'
+        - 'revert all revisions'
+        - 'view all revisions'
+        - 'view own unpublished content'
+        - 'view the administration theme'
+      _core:
+        default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
+  -
+    collection: ''
+    name: user.settings
+    data:
+      langcode: en
+      anonymous: Anonymous
+      verify_mail: true
+      notify:
+        cancel_confirm: true
+        password_reset: true
+        status_activated: true
+        status_blocked: false
+        status_canceled: false
+        register_admin_created: true
+        register_no_approval_required: true
+        register_pending_approval: true
+      register: visitors_admin_approval
+      cancel_method: user_cancel_block
+      password_reset_timeout: 86400
+      password_strength: true
+      _core:
+        default_config_hash: '-htDFWUv1S4OlJMzta2nhFl4QbhJvu0D9xsJ-clxo-M'

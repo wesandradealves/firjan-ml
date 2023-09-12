@@ -1,0 +1,122 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'block-form',
+    'd-flex align-items-center justify-content-center flex-column flex-wrap'
+  ]
+%}
+
+{% set field_block_template = content.field_block_template.0 ? content.field_block_template.0['#title']|lower|trim : null %}
+
+{% set field_block_form_custom = content.field_block_form_custom.0 ? content.field_block_form_custom.0['#title']|lower|trim : null %}
+
+{% set bg = content.field_block_image.0 ? file_url(content.field_block_image.0['#item'].entity.uri.value) : null %}
+
+{% if content.field_block_custom_classes.0['#context'].value %}
+    {% if ',' in content.field_block_custom_classes.0['#context'].value %}
+        {%
+            set classes = classes|merge(content.field_block_custom_classes.0['#context'].value|split(','))
+        %}    
+    {% else %}
+        {%
+            set classes = classes|merge([content.field_block_custom_classes.0['#context'].value])
+        %}    
+    {% endif %}
+{% endif %}
+
+
+<div{{ attributes.addClass(classes) }} style="{% if bg %} background-image: url({{bg}}) {% endif %}" data-color="{{field_block_template}}">
+    <div class="container pt-5 pb-5">
+        <div class="row d-flex align-items-stretch justify-content-center">
+            {% if label or content.body %}
+                <div  class="block-form-content  text-center text-md-start pe-md-5 d-flex flex-column justify-content-center {% if content.field_block_form_custom %} col-12 col-md-6 {% else %} col-12 {% endif %}">
+                    <h2 class="mb-3 block-form-title">{{label}}</h2>
+
+                    {% if content.body %} 
+                    <div class="block-form-content">
+                        {{content.body.0}} 
+                    </div>
+                    {% endif %}
+
+                    {{content.field_alert_box}}
+                </div>
+            {% endif %} 
+
+            {% if field_block_form_custom %}
+                <div class="{% if content.field_block_title or content.body %} mt-5 m5-md-0 col-12 col-md-6 {% else %} col-12 {% endif %}">
+                    <div class="modal modal-login" key="login">
+                        <div class="wrapper">
+                            <p class="wrapper-title mb-3">Login</p>
+
+                            <p class="wrapper-subtitle">Os dados de acesso estarão no seu e-mail, insira os abaixo e acesse a área interna:
+                            </p>
+
+                            <div class="owl-form owl-carousel owl-theme">
+                                <div class="{% if uid != 0 %}--disabled-form{% endif %}">
+                                    {{ _context[field_block_form_custom ~ '_form']|default(null) }}
+                                </div>
+
+                                <div class="block--modalblockcpf">
+                                    {{ block("content", "block--modalblockcpf.html.twig") }}
+                                </div>                                
+
+                                <div class="block--modalblockregister">
+                                    {{ block("content", "block--modalblockregister.html.twig") }}
+                                </div>
+
+                                <div class="block--modalblockregister">
+                                    {{ block("content", "block--modalblockrecover.html.twig") }}
+                                </div>                                
+                            </div>
+
+                            <div class="wrapper-footer">
+                                <div class="wrapper-footer--description">
+                                    <p>
+                                        <span class="label w-100 d-block">Não tem cadastro ainda?</span>
+                                        <button data-page="1" type="button" title="Cadastre-se aqui." aria-label="Cadastre-se aqui." class="d-block modal_toggler">
+                                            Cadastre-se aqui.
+                                        </button>                                     
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {# Spinner #}
+                        <div class="spinner d-none flex-column justify-content-center align-items-center h-100 w-100">
+                            <div class="lds-dual-ring"></div>
+                        </div>                            
+                    </div> 
+                </div>
+            {% endif %} 
+
+        </div>
+    </div>
+</div>
+

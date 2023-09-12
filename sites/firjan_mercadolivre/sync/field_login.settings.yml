@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: c1lT4qnDuaQM9uNhg0LhBrBNaTLDi_d1XqcF1uDD4So
+login_field:
+  name: name
+  mail: mail
+  field_cnpj: field_cnpj
+override_login_labels: 1
+login_username_title: 'Login by CNPJ'
+login_username_description: 'You can use your CNPJ to login.'
+submit: 'Save configuration'
+form_build_id: form-jhN-R7m-90KBgqXHs6VI2Dy14SG4k_ow-ouW83W7zXk
+form_token: p4-Oul7S1v3-FEChbg6Blj6lJ7geD2cpFbDah64FZeE
+form_id: field_login_settings_form
+op: 'Save configuration'

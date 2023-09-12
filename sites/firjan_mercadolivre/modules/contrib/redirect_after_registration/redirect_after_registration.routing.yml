@@ -1,0 +1,9 @@
+redirect_after_registration.redirect_after_registration_config_form:
+  path: '/admin/config/redirect_after_registration/config'
+  defaults:
+    _form: '\Drupal\redirect_after_registration\Form\RedirectAfterRegistrationConfigForm'
+    _title: 'Redirect After Registration'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE

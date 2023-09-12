@@ -1,0 +1,4 @@
+administer field login:
+  description: 'Configurations for Field Login'
+  title: 'Administer Field Login'
+  restrict access: TRUE

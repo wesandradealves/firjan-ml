@@ -1,0 +1,19 @@
+uuid: effe98ab-6eef-44f7-b4e9-4165389efe2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_view
+    - field.storage.block_content.field_parametros
+id: block_content.block_view.field_parametros
+field_name: field_parametros
+entity_type: block_content
+bundle: block_view
+label: Parameters
+description: 'Separar parâmetros por ",".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

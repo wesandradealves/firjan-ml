@@ -1,0 +1,21 @@
+uuid: 4f7ddb48-99e3-4895-b0da-3dd37214568f
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_whitelist_entidade
+field_name: field_whitelist_entidade
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

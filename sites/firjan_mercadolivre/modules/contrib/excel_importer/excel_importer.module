@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains excel_importer.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function excel_importer_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.excel_importer':
+      $output = '';
+      $output .= '<h3>' . t('Excel Importer') . '</h3>';
+      $output .= '<p>' . t('Import content form Excel files into Nodes.') . '</p>';
+      $output .= '<h4>' . t('Usage') . '</h4>';
+      $output .= '<ol>';
+      $output .= '<li>' . t('Navigate <a href="@uri" target="_blank">Excel Import</a> page.', ['@uri' => Url::fromRoute('excel_importer.import_form')->toString()]) . '</li>';
+      $output .= '<li>' . t('Read the introductory text there to make sure the structure of the document is what is expected.') . '</li>';
+      $output .= '<li>' . t('Select your Excel file and upload it.') . '</li>';
+      $output .= '<li>' . t('Click on <strong>Save</strong> button.') . '</li>';
+      $output .= '</ol>';
+      $output .= '<h4>' . t('Administer Settings') . '</h4>';
+      $output .= '<ol>';
+      $output .= '<li>' . t('Navigate <a href="@uri" target="_blank">Excel Importer Settings</a> page.', ['@uri' => Url::fromRoute('excel_importer.admin_settings')->toString()]) . '</li>';
+      $output .= '<li>' . t('Add in the introductory text; this can include links to template files or documentation page.') . '</li>';
+      $output .= '<li>' . t('Choose the Content Types that should be available for importing Excel Data into. <br/> <em>Remember, the template Excel file should have at least one of these content types as a sheet.</em>') . '</li>';
+      $output .= '<li>' . t('Click on <strong>Save Configuration</strong> button.') . '</li>';
+      $output .= '</ol>';
+      $output .= '<h4>' . t('Documentation') . '</h4>';
+      $output .= '<a href="https://www.drupal.org/docs/contributed-modules/excel-importer" target="_blank">' . 'https://www.drupal.org/docs/contributed-modules/excel-importer' . '</a>';
+      return $output;
+  }
+}

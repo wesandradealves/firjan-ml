@@ -1,0 +1,19 @@
+uuid: 859e61b8-0ce8-4202-9c26-3f5d1a408da0
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_alert_box_text
+field_name: field_alert_box_text
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

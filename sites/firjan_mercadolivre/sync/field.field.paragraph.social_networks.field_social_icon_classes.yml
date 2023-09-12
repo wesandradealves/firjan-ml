@@ -1,0 +1,19 @@
+uuid: 60b44ee2-e559-4b4a-a5e0-f77284f5ed4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_social_icon_classes
+    - paragraphs.paragraphs_type.social_networks
+id: paragraph.social_networks.field_social_icon_classes
+field_name: field_social_icon_classes
+entity_type: paragraph
+bundle: social_networks
+label: 'Social Icon Classes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

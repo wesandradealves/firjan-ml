@@ -1,0 +1,5 @@
+allowed_types:
+  - article
+introduction: >
+  <p>Use the form below to import your data. Make sure your Excel files adhere to <a href="">guidelines provided</a>.</p>
+  <p>Additionally, you can use these <a href="">template files</a> to appropriately setup your data.</p>

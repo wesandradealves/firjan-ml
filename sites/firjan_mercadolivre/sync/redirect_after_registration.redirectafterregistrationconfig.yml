@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: 9HqkHOHuV4nlcHSsjuAREluGbWM3MsniiC8CbC3_L5E
+redirect_after_registration:
+  destination: /user/login
+  suppress_admin: false
+destination: /cadastro/sucesso
+suppress_admin: 0

@@ -1,0 +1,39 @@
+uuid: 53dddc5c-fe52-4be2-b053-f6fdf61219ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_cnpj
+    - field.field.user.user.field_cpf
+    - field.field.user.user.field_nome
+    - field.field.user.user.user_picture
+  module:
+    - user
+_core:
+  default_config_hash: kD2TjItfNDKFw2CFJQfuv4Ys6qg3uYa4hCJYN2jreec
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  field_cnpj:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_nome:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_cpf: true
+  member_for: true
+  user_picture: true

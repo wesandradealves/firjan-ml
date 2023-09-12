@@ -1,0 +1,5 @@
+services:
+  blocache:
+    class: Drupal\blocache\Blocache
+  blocache.metadata:
+    class: Drupal\blocache\BlocacheMetadata

@@ -1,0 +1,19 @@
+uuid: c58e1808-091c-42e4-9a22-37ddd9240afd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_cta
+    - field.storage.block_content.field_block_custom_classes
+id: block_content.block_cta.field_block_custom_classes
+field_name: field_block_custom_classes
+entity_type: block_content
+bundle: block_cta
+label: 'Block Custom Classes'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,25 @@
+name: Firjan Mercadolivre
+type: theme
+description: "Firjan Mercadolivre - Barrio SubTheme."
+core: 8.x
+core_version_requirement: ^8 || ^9
+base theme: bootstrap_barrio
+
+libraries:
+  - firjan_mercadolivre/bootstrap_cdn
+  - firjan_mercadolivre/global-styling
+  - firjan_mercadolivre/override-styling
+  - firjan_mercadolivre/slick
+
+regions:
+  header: "Header"
+  content: Content
+  home: "Home"
+  dashboard: "Dashboard"
+  footer_top: "Footer Top"
+  footer: "Footer"
+
+components:
+  namespaces:
+    partials:
+      - templates/partials

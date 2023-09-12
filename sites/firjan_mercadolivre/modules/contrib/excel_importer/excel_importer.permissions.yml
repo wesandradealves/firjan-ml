@@ -1,0 +1,8 @@
+use excel_importer:
+  title: 'Use Excel Importer'
+  description: 'Use the Excel Importer to create content.'
+  restrict access: true
+administer excel_importer:
+  title: 'Administer Excel Importer'
+  description: 'Access the Excel Importer administrative settings page.'
+  restrict access: true

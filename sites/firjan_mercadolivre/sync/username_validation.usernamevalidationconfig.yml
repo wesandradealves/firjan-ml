@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: AIovxDkp_lDsW1hiPN3QCjOsne6vwcPRntsSYiV2tMo
+username_validation: null
+blacklist_char: ''
+min_char: '1'
+max_char: '128'
+avoid_spaces: 0
+ajax_validation: 0
+user_label: ''
+user_desc: ''

@@ -1,0 +1,30 @@
+uuid: d26078ed-f7ff-4910-acd4-c565ca3b9cc7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_form:f5402b9c-3fdd-4337-b20a-85270c37adc6'
+  module:
+    - block_content
+    - system
+  theme:
+    - firjan_mercadolivre
+id: homelogin
+theme: firjan_mercadolivre
+region: home
+weight: 0
+provider: null
+plugin: 'block_content:f5402b9c-3fdd-4337-b20a-85270c37adc6'
+settings:
+  id: 'block_content:f5402b9c-3fdd-4337-b20a-85270c37adc6'
+  label: 'FIRJAN + MERCADO LIVRE'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

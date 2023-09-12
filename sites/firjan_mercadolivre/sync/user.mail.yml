@@ -1,0 +1,30 @@
+_core:
+  default_config_hash: 6CZIzFifRq3qbdq3n3nDpEOO4hWIQtKOAQNPvGNGKeM
+langcode: en
+cancel_confirm:
+  subject: 'Account cancellation request for [user:display-name] at [site:name]'
+  body: "[user:display-name]\r\n\r\nA request to cancel your account has been made at [site:name].\r\n\r\nYou may now cancel your account on [site:url-brief] by clicking this link or copying and pasting it into your browser:\r\n\r\n[user:cancel-url]\r\n\r\nNOTE: The cancellation of your account is not reversible.\r\n\r\nThis link expires in one day and nothing will happen if it is not used.\r\n\r\n--  [site:name] team"
+password_reset:
+  subject: 'Replacement login information for [user:display-name] at [site:name]'
+  body: "[user:field_nome],\r\n\r\nUma solicitação para redefinir a senha da sua conta foi feita em [site:name].\r\n\r\nAgora você pode fazer login clicando neste link ou copiando e colando em seu navegador:\r\n\r\n[user:one-time-login-url]\r\n\r\nEste link só pode ser usado uma vez para fazer login e o levará a uma página onde você pode definir sua senha. Ele expira após um dia e nada acontecerá se não for usado.\r\n<br/>\r\n<img height=\"50\" src=\"/sites/firjan_mercadolivre/files/Mercado%20Livre%201%20%281%29.png\" alt=\"Firjan + Mercadolivre\">"
+register_admin_created:
+  subject: 'An administrator created an account for you at [site:name]'
+  body: "Oi [user:field_nome],\r\n\r\nObrigado por se cadastrar no projeto [site:name].\r\nVocê está a um passo de iniciar uma jornada que vai ajudar a alavancar suas vendas.\r\nFaça a validação do seu cadastro clicando no botão abaixo:\r\n\r\n[user:one-time-login-url]\r\n\r\nDepois de configurar sua senha, você poderá logar pelo site [site:login-url] usando:\r\n\r\nusername: [user:name]\r\npassword: Your password\r\n\r\nObrigado(a) por se inscrever.\r\n\r\n<img height=\"50\" src=\"/sites/firjan_mercadolivre/files/Mercado%20Livre%201%20%281%29.png\" alt=\"Firjan + Mercadolivre\">"
+register_no_approval_required:
+  subject: 'Account details for [user:display-name] at [site:name]'
+  body: "Oi [user:field_nome],\r\n\r\nObrigado por se cadastrar no projeto [site:name].\r\nVocê está a um passo de iniciar uma jornada que vai ajudar a alavancar suas vendas.\r\nFaça a validação do seu cadastro clicando no botão abaixo:\r\n\r\n[user:one-time-login-url]\r\n\r\nDepois de configurar sua senha, você poderá logar pelo site [site:login-url] usando:\r\n\r\nusername: [user:name]\r\npassword: Your password\r\n\r\nObrigado(a) por se inscrever.\r\n\r\n<img height=\"50\" src=\"/sites/firjan_mercadolivre/files/Mercado%20Livre%201%20%281%29.png\" alt=\"Firjan + Mercadolivre\">"
+register_pending_approval:
+  subject: 'Account details for [user:display-name] at [site:name] (pending admin approval)'
+  body: "[user:display-name],\r\n\r\nThank you for registering at [site:name]. Your application for an account is currently pending approval. Once it has been approved, you will receive another email containing information about how to log in, set your password, and other details.\r\n\r\n--  [site:name] team"
+register_pending_approval_admin:
+  subject: 'Account details for [user:display-name] at [site:name] (pending admin approval)'
+  body: "[user:display-name] has applied for an account.\r\n\r\n[user:edit-url]"
+status_activated:
+  subject: 'Account details for [user:display-name] at [site:name] (approved)'
+  body: "Oi [user:field_nome],\r\n\r\nObrigado por se cadastrar no projeto [site:name].\r\nVocê está a um passo de iniciar uma jornada que vai ajudar a alavancar suas vendas.\r\nFaça a validação do seu cadastro clicando no botão abaixo:\r\n\r\n[user:one-time-login-url]\r\n\r\nDepois de configurar sua senha, você poderá logar pelo site [site:login-url] usando:\r\n\r\nusername: [user:name]\r\npassword: Your password\r\n\r\nObrigado(a) por se inscrever.\r\n\r\n<img height=\"50\" src=\"/sites/firjan_mercadolivre/files/Mercado%20Livre%201%20%281%29.png\" alt=\"Firjan + Mercadolivre\">"
+status_blocked:
+  subject: 'Account details for [user:display-name] at [site:name] (blocked)'
+  body: "[user:display-name],\r\n\r\nYour account on [site:name] has been blocked.\r\n\r\n--  [site:name] team"
+status_canceled:
+  subject: 'Account details for [user:display-name] at [site:name] (canceled)'
+  body: "[user:display-name],\r\n\r\nYour account on [site:name] has been canceled.\r\n\r\n--  [site:name] team"

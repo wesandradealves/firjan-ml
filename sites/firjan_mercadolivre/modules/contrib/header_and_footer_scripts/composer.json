@@ -1,0 +1,32 @@
+{
+  "name": "drupal/header_and_footer_scripts",
+  "description": "Allows you to add the scripts and styles on overall site from the front-end. No need to open files and add them there.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "Drupal",
+    "script",
+    "style"
+  ],
+  "homepage": "https://www.drupal.org/project/header_and_footer_scripts",
+  "authors": [
+    {
+      "name": "See contributors",
+      "homepage": "https://www.drupal.org/node/2832400/committers",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "sami.siddiqui@yasglobal.com",
+    "issues": "https://www.drupal.org/project/issues/header_and_footer_scripts",
+    "source": "https://git.drupalcode.org/project/header_and_footer_scripts"
+  },
+  "require": {
+    "php": "^7.4 || ^8.0",
+    "drupal/core": "^8 || ^9"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+    "drupal/coder": "^8.3"
+  }
+}

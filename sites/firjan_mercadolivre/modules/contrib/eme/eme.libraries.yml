@@ -1,0 +1,13 @@
+countdown:
+  js:
+    js/eme-countdown.js: {}
+  dependencies:
+    - core/drupal
+
+export-id:
+  js:
+    js/eme-export-id.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

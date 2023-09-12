@@ -1,0 +1,60 @@
+<footer id="main-footer">
+  <div class="top-footer">
+    <div class="container pt-3 pb-3">
+      <div class="row d-flex flex-column flex-md-row align-items-center justify-content-between flex-wrap">
+        <div class="col-12 col-md-6">
+          {%if content.field_contacts['#items']%}
+            <ul class="contact-row w-100 d-flex justify-content-between flex-wrap">
+              {% for key, item in content.field_contacts['#items'] %}
+                {% set index = key + 1 %}
+                <li class="{{item.entity.get('field_contact_row_classes').value}} {% if index < content.field_contacts['#items']|length %} mb-3 {% endif %}">
+                  <h3>{{item.entity.get('field_contact_headline').value}} 
+                    <small class="d-block m-auto {% if item.entity.get('field_contact_headline').value %} pt-1 {% endif %}">{{item.entity.get('field_contact_information').value}}</small>
+                  </h3>
+                </li>
+              {% endfor %}          
+            </ul>
+          {%endif%}
+        </div>
+        <div class="col-12 col-md-6">
+          <h2 class="logo d-flex justify-content-center justify-content-md-end align-content-center">
+            {% if logo_footer %}
+              <img height="80" src="{{logo_footer}}" alt="{{site_name}}">
+            {% else %}
+              <img height="80" src="{{ base_path ~ directory }}/images/logo-branco.png" alt="{{site_name}}">
+            {% endif %}    
+          </h2>
+        </div>
+      </div>
+      {# {%if footer_website_url %}
+      <div class="website">
+        <a href="{{footer_website_url}}" title="Ir para o website" aria-label="Ir para o website">
+          {{footer_website_url|replace({'https://': ''})}} </a>
+      </div>
+      {%endif%} #}
+    </div>
+  </div>
+  <div class="bottom-footer">
+    <div class="container pt-3 pb-3">
+      <div class="d-flex  flex-column flex-md-row align-items-center justify-content-between flex-wrap">
+        <div class="col-12 col-md-7 d-flex align-items-center flex-column flex-md-row">
+          {%if content.field_social['#items']%}
+            <ul class="social pb-3 pb-md-0 pe-md-3">
+              {% for item in content.field_social['#items'] %}
+                <li>
+                  <a aria-label="Ir para a rede social" title="Ir para a rede social" rel="noopener noreferrer" href="{{item.entity.get('field_social_url').value}}" title="" target="_blank">
+                    <i class="fab {{item.entity.get('field_social_icon_classes').value}}"></i>
+                  </a>
+                </li>
+              {% endfor %}          
+            </ul>
+          {%endif%}
+          <p class="copyright text-center d-block">© {{ "now"|date('Y') }}. Todos os direitos reservados para o FIRJAN.</p>
+        </div>
+        <div class="col-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-end">
+          {{ drupal_menu('footer') }}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>	

@@ -1,0 +1,19 @@
+uuid: c4b537c3-87c4-4c2f-b807-ea5c621cc771
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - text
+id: taxonomy_term.field_videos_taxonomy_descricao
+field_name: field_videos_taxonomy_descricao
+entity_type: taxonomy_term
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

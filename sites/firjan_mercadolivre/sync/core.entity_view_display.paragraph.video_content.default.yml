@@ -1,0 +1,82 @@
+uuid: 91ffd326-2b2c-4816-9bc8-c3d3ef1c7bcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video_content.field_block_theme_video
+    - field.field.paragraph.video_content.field_video_arquivo
+    - field.field.paragraph.video_content.field_video_button_label
+    - field.field.paragraph.video_content.field_video_subtitle
+    - field.field.paragraph.video_content.field_video_thumbnail
+    - field.field.paragraph.video_content.field_video_title
+    - field.field.paragraph.video_content.field_video_url
+    - paragraphs.paragraphs_type.video_content
+  module:
+    - file
+    - image
+id: paragraph.video_content.default
+targetEntityType: paragraph
+bundle: video_content
+mode: default
+content:
+  field_block_theme_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_video_arquivo:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_video_button_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_video_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_video_thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_video_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_video_url:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

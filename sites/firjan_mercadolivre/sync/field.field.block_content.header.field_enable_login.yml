@@ -1,0 +1,23 @@
+uuid: dd1cd6e0-b04c-4470-bd7d-377d11cccd4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header
+    - field.storage.block_content.field_enable_login
+id: block_content.header.field_enable_login
+field_name: field_enable_login
+entity_type: block_content
+bundle: header
+label: 'Enable Login'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

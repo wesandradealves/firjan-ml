@@ -1,0 +1,14 @@
+eme.settings:
+  type: config_object
+  label: 'Entity Export settings'
+  mapping:
+    eme_id:
+      type: string
+      label: 'Used for generating module name, migration group and migration ID prefix'
+      nullable: true
+    ignored_entity_types:
+      type: sequence
+      label: 'Entity types to ignore'
+      sequence:
+        type: string
+        label: 'Ignored type'

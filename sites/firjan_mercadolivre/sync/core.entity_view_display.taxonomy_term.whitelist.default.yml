@@ -1,0 +1,40 @@
+uuid: a20b7673-4e1e-4dd8-96b9-f4a32f1015f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.whitelist.field_whitelist_entidade
+    - field.field.taxonomy_term.whitelist.field_whitelist_nome_fantasia
+    - field.field.taxonomy_term.whitelist.field_whitelist_vinculo
+    - taxonomy.vocabulary.whitelist
+id: taxonomy_term.whitelist.default
+targetEntityType: taxonomy_term
+bundle: whitelist
+mode: default
+content:
+  field_whitelist_entidade:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_whitelist_nome_fantasia:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_whitelist_vinculo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  description: true

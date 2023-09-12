@@ -1,0 +1,34 @@
+uuid: cb0e2c35-da5c-4e79-b643-a5b5948cf9e3
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:footer:37790a35-626c-4752-89fc-ec689958d591'
+  module:
+    - blocache
+    - block_content
+  theme:
+    - firjan_mercadolivre
+third_party_settings:
+  blocache:
+    overridden: true
+    metadata:
+      max-age: 0
+      contexts: {  }
+      tags:
+        - 'config:block.block.footerblock'
+id: footerblock
+theme: firjan_mercadolivre
+region: footer
+weight: -1
+provider: null
+plugin: 'block_content:37790a35-626c-4752-89fc-ec689958d591'
+settings:
+  id: 'block_content:37790a35-626c-4752-89fc-ec689958d591'
+  label: 'Footer Block'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

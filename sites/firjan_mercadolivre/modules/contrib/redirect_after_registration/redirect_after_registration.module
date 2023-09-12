@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Url;
+
+/**
+ * @file
+ * Contains redirect_after_registration.module.
+ */
+
+/**
+ * Implements hook_form_FORM_alter().
+ *
+ * Adds method to submit handler to redirect after form submission.
+ */
+function redirect_after_registration_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'user_register_form':
+      $form['actions']['submit']['#submit'][] = '_redirect_after_registration_user_register_submit';
+      break;
+  }
+}
+
+/**
+ * Method to handle redirection.
+ */
+function _redirect_after_registration_user_register_submit($form, &$form_state) {
+  $redirect_config = \Drupal::config('redirect_after_registration.redirectafterregistrationconfig');
+  // Do not redirect if user is not anonymous, and admin setting is unchecked.
+  $suppress_redirect = $redirect_config->get('suppress_admin') && !\Drupal::currentUser()
+      ->isAnonymous();
+  if (!$suppress_redirect && !empty($redirect_config->get('destination'))) {
+    $url = Url::fromUri('internal:' . $redirect_config->get('destination'));
+    $form_state->setRedirectUrl($url);
+  }
+}

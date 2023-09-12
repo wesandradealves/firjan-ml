@@ -1,0 +1,29 @@
+uuid: 8da52bf8-972b-4803-b751-6ff8ba5cded0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_block_theme_video
+    - paragraphs.paragraphs_type.video_content
+    - taxonomy.vocabulary.video_themes
+id: paragraph.video_content.field_block_theme_video
+field_name: field_block_theme_video
+entity_type: paragraph
+bundle: video_content
+label: 'Block Theme Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      video_themes: video_themes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

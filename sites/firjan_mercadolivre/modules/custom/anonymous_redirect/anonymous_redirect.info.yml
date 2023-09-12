@@ -1,0 +1,7 @@
+name: Anonymous redirect
+description: Anonymous redirect functionality.
+package: Custom
+type: module
+version: '8.x-1.0'
+project: 'anonymous_redirect'
+core_version_requirement: ^8 || ^9

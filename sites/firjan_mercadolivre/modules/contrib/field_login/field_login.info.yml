@@ -1,0 +1,17 @@
+name: 'User field login'
+type: module
+description: 'This module enables users to login by field address.'
+core_version_requirement: ^8 || ^9
+
+configure: field_login.settings
+package: 'Administration'
+# project: 'field_login'
+
+# Information added by Drupal.org packaging script on 2021-07-19
+# version: '1.0.3'
+# datestamp: 1626624000
+
+# Information added by Drupal.org packaging script on 2021-07-19
+version: '1.0.4'
+project: 'field_login'
+datestamp: 1626688749

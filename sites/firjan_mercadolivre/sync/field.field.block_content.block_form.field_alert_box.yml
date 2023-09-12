@@ -1,0 +1,43 @@
+uuid: 3bed1bdc-49b2-4723-a604-7987e45fbc13
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_form
+    - field.storage.block_content.field_alert_box
+    - paragraphs.paragraphs_type.alert_box
+  module:
+    - entity_reference_revisions
+id: block_content.block_form.field_alert_box
+field_name: field_alert_box
+entity_type: block_content
+bundle: block_form
+label: 'Alert Box'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      alert_box: alert_box
+    negate: 0
+    target_bundles_drag_drop:
+      alert_box:
+        weight: 6
+        enabled: true
+      banner:
+        weight: 7
+        enabled: false
+      contact_info:
+        weight: 8
+        enabled: false
+      social_networks:
+        weight: 9
+        enabled: false
+      video_content:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

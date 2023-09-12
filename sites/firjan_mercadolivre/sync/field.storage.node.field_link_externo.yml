@@ -1,0 +1,21 @@
+uuid: c6ec5d81-8414-47f6-a99b-be7a958c493a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_link_externo
+field_name: field_link_externo
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

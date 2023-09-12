@@ -1,0 +1,21 @@
+uuid: 37c13182-19cb-4add-ab19-27f1aefca09b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_alert_box_text
+    - paragraphs.paragraphs_type.alert_box
+  module:
+    - text
+id: paragraph.alert_box.field_alert_box_text
+field_name: field_alert_box_text
+entity_type: paragraph
+bundle: alert_box
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

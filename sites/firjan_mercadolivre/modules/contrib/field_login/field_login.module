@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Contains field_login.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function field_login_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  switch ($form_id) {
+    case 'user_login_form':
+      // Load module configurations.
+      $config_factory = \Drupal::configFactory();
+      $config = $config_factory->get('field_login.settings');
+      // Check for settings to enable login by email address.
+      if ($config->get('override_login_labels')) {
+        $form['name']['#title'] = $config->get('login_username_title');
+        $form['name']['#description'] = $config->get('login_username_description');
+      }
+      break;
+  }
+}

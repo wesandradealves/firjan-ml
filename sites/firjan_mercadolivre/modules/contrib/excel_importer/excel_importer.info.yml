@@ -1,0 +1,13 @@
+name: Excel Importer
+description: Module to import Excel data into Nodes.
+
+type: module
+package: Import
+core_version_requirement: ^8.8 || ^9
+
+configure: excel_importer.admin_settings
+
+# Information added by Drupal.org packaging script on 2021-09-23
+version: '1.1.10'
+project: 'excel_importer'
+datestamp: 1632411979

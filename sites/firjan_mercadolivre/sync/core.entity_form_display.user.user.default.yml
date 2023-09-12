@@ -1,0 +1,38 @@
+uuid: 407d1138-dba9-4d0f-9ab4-f86f9099c61a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_cnpj
+    - field.field.user.user.field_cpf
+    - field.field.user.user.field_nome
+    - field.field.user.user.user_picture
+  module:
+    - user
+_core:
+  default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nome:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: Nome
+    third_party_settings: {  }
+hidden:
+  contact: true
+  field_cnpj: true
+  field_cpf: true
+  language: true
+  timezone: true
+  user_picture: true

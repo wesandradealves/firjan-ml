@@ -1,0 +1,19 @@
+uuid: 34f438db-dd00-485b-8195-325e93c3dfad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_button_label
+    - paragraphs.paragraphs_type.video_content
+id: paragraph.video_content.field_video_button_label
+field_name: field_video_button_label
+entity_type: paragraph
+bundle: video_content
+label: 'Vídeo Button Label'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,29 @@
+uuid: 7b934a6e-7bb2-4d92-b764-294aa488f7e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_form
+    - field.storage.block_content.field_block_form_custom
+    - taxonomy.vocabulary.form_types
+id: block_content.block_form.field_block_form_custom
+field_name: field_block_form_custom
+entity_type: block_content
+bundle: block_form
+label: 'Block Form Custom'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      form_types: form_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

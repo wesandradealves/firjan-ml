@@ -1,0 +1,30 @@
+uuid: c8e2c0a5-2b11-4c98-9e75-91908876e389
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_cta:760a1122-a608-42f1-92ad-83670cabeb6b'
+  module:
+    - block_content
+    - system
+  theme:
+    - firjan_mercadolivre
+id: naoencontrouoqueprocuravaouficoucomalgumaduvida
+theme: firjan_mercadolivre
+region: footer_top
+weight: -3
+provider: null
+plugin: 'block_content:760a1122-a608-42f1-92ad-83670cabeb6b'
+settings:
+  id: 'block_content:760a1122-a608-42f1-92ad-83670cabeb6b'
+  label: 'Não encontrou o que procurava ou ficou com alguma dúvida?'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/dashboard\r\n<front>\r\n/"

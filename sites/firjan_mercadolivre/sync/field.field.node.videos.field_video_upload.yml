@@ -1,0 +1,27 @@
+uuid: f50c19ef-58a2-4c82-9c79-eb0133891174
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_upload
+    - node.type.videos
+  module:
+    - file
+id: node.videos.field_video_upload
+field_name: field_video_upload
+entity_type: node
+bundle: videos
+label: 'Video Upload'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: videos
+  file_extensions: 'mp4 m4v mov mpg mpeg wmv'
+  max_filesize: '500 MB'
+  description_field: false
+field_type: file

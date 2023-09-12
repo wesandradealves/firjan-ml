@@ -1,0 +1,6 @@
+redirect_after_registration.redirect_after_registration_config_form:
+  title: 'Redirect After Registration'
+  route_name: redirect_after_registration.redirect_after_registration_config_form
+  description: 'Configure the destination to be redirected to after registering.'
+  parent: system.admin_config_system
+  weight: 99

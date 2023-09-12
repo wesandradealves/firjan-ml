@@ -1,0 +1,10 @@
+{
+    "name": "drupal/redirect_after_registration",
+    "type": "drupal-module",
+    "description": "Module to help you configure destination to be redirected after registration.",
+    "homepage": "http://drupal.org/project/redirect_after_registration",
+    "license": "GPL-2.0+",
+    "require": {
+        "drupal/core": "^8.7.7 || ^9 || ^10"
+    }
+}

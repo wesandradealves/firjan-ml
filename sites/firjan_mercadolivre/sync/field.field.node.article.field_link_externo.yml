@@ -1,0 +1,19 @@
+uuid: 1017a9f3-3917-4f07-b166-e206a2c83f77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_externo
+    - node.type.article
+id: node.article.field_link_externo
+field_name: field_link_externo
+entity_type: node
+bundle: article
+label: 'Link externo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

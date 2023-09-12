@@ -1,0 +1,8 @@
+uuid: 97abad3d-3fea-4197-9bb8-6e136596965a
+langcode: en
+status: true
+dependencies: {  }
+name: '50x50 block template'
+vid: 50x50_block_template
+description: 'Taxonomy for 50x50 block templates'
+weight: 0

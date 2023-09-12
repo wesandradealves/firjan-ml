@@ -1,0 +1,19 @@
+uuid: 9840a084-af2b-4e46-8c88-2247120368f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_url
+    - node.type.videos
+id: node.videos.field_video_url
+field_name: field_video_url
+entity_type: node
+bundle: videos
+label: URL
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

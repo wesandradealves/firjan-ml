@@ -1,0 +1,21 @@
+uuid: 9a273d5d-e33f-4ae0-855a-8e69c7ceefce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_videos_taxonomy_descricao
+    - taxonomy.vocabulary.videos_taxonomy
+  module:
+    - text
+id: taxonomy_term.videos_taxonomy.field_videos_taxonomy_descricao
+field_name: field_videos_taxonomy_descricao
+entity_type: taxonomy_term
+bundle: videos_taxonomy
+label: Descrição
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

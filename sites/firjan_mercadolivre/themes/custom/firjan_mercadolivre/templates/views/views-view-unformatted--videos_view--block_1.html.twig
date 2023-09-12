@@ -1,0 +1,45 @@
+{#
+/**
+  * @file
+  * Default theme implementation to display a view of unformatted rows.
+  *
+  * Available variables:
+  * - title: The title of this group of rows. May be empty.
+  * - rows: A list of the view's row items.
+  *   - attributes: The row's HTML attributes.
+  *   - content: The row's content.
+  * - view: The view object.
+  * - default_row_class: A flag indicating whether default classes should be
+  *   used on rows.
+  *
+  * @see template_preprocess_views_view_unformatted()
+  *
+  * @ingroup themeable
+  */
+#}
+{% for key, row in rows %}
+
+    {% set field_video_url = row.content['#row']._entity.field_video_url[0].value %}
+    {% set title = row.content['#row']._entity.title[0].value %}
+    {% set vid = '' %}
+
+    {% if field_video_url|split('embed/')|length == 2 %}
+      {% set vid = field_video_url|split('embed/')[1] %}
+    {% elseif field_video_url|split('?v=')|length == 2 %} 
+      {% set vid = field_video_url|split('?v=')[1] %}
+    {% endif %}
+
+    {% set field_video_thumbnail = row.content['#row']._entity.field_video_thumbnail.entity.uri.value ? file_url(row.content['#row']._entity.field_video_thumbnail.entity.uri.value) : 'https://i.ytimg.com/vi/'~vid~'/0.jpg' %}
+    
+    <div 
+      {% if ('embed' in field_video_url == FALSE) and ('?v=' in field_video_url == FALSE) %} onclick="window.open('{{field_video_url}}', '_blank')" {% endif %}
+      class="video-block mb-5" >
+      <div {% if vid %} data-video-id="{{vid}}" {% endif %} class="video-block-thumbnail {% if vid %}js-modal-btn{% endif %}" style="background-image: url({{field_video_thumbnail}})">
+      </div>
+      <h4 {% if vid %} data-video-id="{{vid}}" {% endif %} class="video-block-title mt-3 {% if vid %}js-modal-btn{% endif %}">{{title}}</h4>
+
+      {% if row.content['#row']._entity.field_inscreva_se|length %}
+        <a target="_blank" href="{{row.content['#row']._entity.field_inscreva_se[0].value['uri']}}" title="{{row.content['#row']._entity.field_inscreva_se[0].value['title']}}" target="_blank" class="mt-4 btn">{{row.content['#row']._entity.field_inscreva_se[0].value['title']}}</a>
+      {% endif %}
+    </div>    
+{% endfor %}

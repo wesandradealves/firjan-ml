@@ -1,0 +1,30 @@
+uuid: b1b647f6-ec0e-4c69-b7bb-5315ea90a4cb
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:94ffa084-98bc-450f-8fe6-2fe1d1affdf4'
+  module:
+    - block_content
+    - system
+  theme:
+    - firjan_mercadolivre
+id: tituloetextosemblocodefundo.
+theme: firjan_mercadolivre
+region: dashboard
+weight: -6
+provider: null
+plugin: 'block_content:94ffa084-98bc-450f-8fe6-2fe1d1affdf4'
+settings:
+  id: 'block_content:94ffa084-98bc-450f-8fe6-2fe1d1affdf4'
+  label: 'Conheça outros conteúdos da Casa Firjan e Firjan IEL para a gestão do seu negócio.'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /dashboard

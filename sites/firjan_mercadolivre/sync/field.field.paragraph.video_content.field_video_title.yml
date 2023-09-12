@@ -1,0 +1,19 @@
+uuid: 8944e449-ccbc-4043-a1f3-bbb97f343b35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_title
+    - paragraphs.paragraphs_type.video_content
+id: paragraph.video_content.field_video_title
+field_name: field_video_title
+entity_type: paragraph
+bundle: video_content
+label: 'Video Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

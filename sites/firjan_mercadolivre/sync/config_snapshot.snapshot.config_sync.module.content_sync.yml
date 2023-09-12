@@ -1,0 +1,19 @@
+uuid: 6ae92186-89b5-461a-bc6f-5a55625bafbc
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_sync
+id: config_sync.module.content_sync
+snapshotSet: config_sync
+extensionType: module
+extensionName: content_sync
+items:
+  -
+    collection: ''
+    name: content_sync.AdminSettings
+    data:
+      site_uuid_override: '0'
+      help_menu_disabled: false
+      _core:
+        default_config_hash: WvXLN1x52wMWWAMFc8gpSuFK5mrsLBp4e1pRR2-M08k

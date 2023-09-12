@@ -1,0 +1,9 @@
+services:
+  dpolac.twig_lambda.extension:
+      class: DPolac\TwigLambda\LambdaExtension
+      tags: [ { name: twig.extension } ]
+parameters:
+  twig.config:
+    debug: true
+    auto_reload: true
+    cache: false

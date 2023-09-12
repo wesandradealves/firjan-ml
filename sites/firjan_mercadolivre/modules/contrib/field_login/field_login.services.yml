@@ -1,0 +1,6 @@
+services:
+  field_login.auth:
+    class: Drupal\field_login\UserAuthDecorator
+    decorates: user.auth
+    public: false
+    arguments: ['@field_login.auth.inner', '@entity_type.manager']

@@ -1,0 +1,10 @@
+name: 'Configuration Normalizer'
+type: module
+description: 'Normalizes configuration for comparison.'
+core_version_requirement: ^8.8 || ^9
+package: Configuration
+
+# Information added by Drupal.org packaging script on 2021-08-30
+version: '2.0.0-alpha2'
+project: 'config_normalizer'
+datestamp: 1630308560

@@ -1,0 +1,37 @@
+uuid: c12b4b3b-0e04-4a8c-8a98-a09574b27142
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.dossie.body
+    - field.field.node.dossie.field_arquivo
+    - field.field.node.dossie.field_data
+    - field.field.node.dossie.field_link_externo_dossie
+    - node.type.dossie
+  module:
+    - text
+    - user
+id: node.dossie.teaser
+targetEntityType: node
+bundle: dossie
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_arquivo: true
+  field_data: true
+  field_link_externo_dossie: true
+  langcode: true

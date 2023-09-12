@@ -1,0 +1,40 @@
+uuid: 9bedb3c3-2ae7-4fcc-ac9a-006af1100352
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dashboard_page_banner
+    - node.type.dashboard
+    - paragraphs.paragraphs_type.banner
+  module:
+    - entity_reference_revisions
+id: node.dashboard.field_dashboard_page_banner
+field_name: field_dashboard_page_banner
+entity_type: node
+bundle: dashboard
+label: Banner
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      banner: banner
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 5
+        enabled: true
+      contact_info:
+        weight: 6
+        enabled: false
+      social_networks:
+        weight: 7
+        enabled: false
+      video_content:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

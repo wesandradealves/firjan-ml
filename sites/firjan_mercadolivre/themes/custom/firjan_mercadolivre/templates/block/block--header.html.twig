@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="container d-flex flex-row flex-wrap align-items-center justify-content-between pt-3 pb-3">
+    <h1 class="logo col-4">
+      <a href="{% if uid != 0 %}/dashboard{% else %}/{% endif %}" class="d-flex align-items-center">
+        {% if logo %}
+          <img height="50" src="{{logo}}" alt="{{site_name}}">
+        {% else %}
+          {{site_name}}
+        {% endif %}     
+      </a>
+    </h1>
+    <div class="actions flex-fill d-flex align-items-center justify-content-end">
+      {% if uid != 0 %}
+          <a type="button" href="/user/logout" class="button button-blue button-small login-button" title="Logout" aria-label="Logout"
+            rel="modal_toggler">
+            <span>Logout</span>
+          </a>
+          {% if isAdmin %}
+            <a class="ms-3" href="/admin">Admin</a>
+          {% endif %}
+        {% else %}
+          <a type="button" href="/" class="button button-blue button-small login-button" title="Login" aria-label="Login"
+            rel="modal_toggler">
+            <span>Login</span>
+          </a>        
+      {% endif %}
+
+      {% if header_extra_phrase %}
+        <p class="header-extra-phrase d-none d-md-block">{{header_extra_phrase}}</p>
+      {% endif %}
+    </div>    
+  </div>
+</header>

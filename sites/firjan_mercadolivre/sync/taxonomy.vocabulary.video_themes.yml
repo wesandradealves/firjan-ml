@@ -1,0 +1,8 @@
+uuid: fccd9145-0290-4c21-9569-051d08b22a9b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Video Themes'
+vid: video_themes
+description: 'Taxonomy for Video Block Themes'
+weight: 0

@@ -1,0 +1,21 @@
+{
+    "name": "drupal/field_login",
+    "type": "drupal-module",
+    "description": "This module enables users to login by field address.",
+    "license": "GPL-2.0+",
+    "keywords": ["php", "user", "drupal"],
+    "homepage": "https://www.drupal.org/project/field_login",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Gao Xiang",
+            "homepage": "https://www.drupal.org/u/qiutuo",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/field_login",
+        "source": "http://cgit.drupalcode.org/field_login",
+        "email": "3401255@qq.com"
+    }
+}

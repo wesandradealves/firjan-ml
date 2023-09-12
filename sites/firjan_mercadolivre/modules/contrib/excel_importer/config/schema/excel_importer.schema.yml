@@ -1,0 +1,14 @@
+excel_importer.settings:
+  type: config_object
+  label: 'Excel Importer Content Type Settings'
+  mapping:
+    introduction:
+      type: text_format
+      label: 'Introductory text with links to additional resources'
+      translatable: true
+    allowed_types:
+      type: sequence
+      label: 'Available Content Types to import Excel data into'
+      sequence:
+        type: string
+        label: 'Content Type'

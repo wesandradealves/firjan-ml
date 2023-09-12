@@ -1,0 +1,7 @@
+{% if rows %}
+    {% include directory ~ '/templates/partials/accordion/accordion.html.twig' with { 
+        view_display: 'videos_view',
+        view_block: 'block_1',    
+        content: rows
+    } %}    
+{% endif %}

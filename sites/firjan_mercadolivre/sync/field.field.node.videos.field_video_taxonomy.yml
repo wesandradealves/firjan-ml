@@ -1,0 +1,31 @@
+uuid: 8cecdf46-0764-408c-8e3d-bc1cdfaf014b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_taxonomy
+    - node.type.videos
+    - taxonomy.vocabulary.videos_taxonomy
+  module:
+    - entity_reference_revisions
+id: node.videos.field_video_taxonomy
+field_name: field_video_taxonomy
+entity_type: node
+bundle: videos
+label: Categoria
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      videos_taxonomy: videos_taxonomy
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_revisions

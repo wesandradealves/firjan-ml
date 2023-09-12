@@ -1,0 +1,11 @@
+name: 'User Restrictions'
+description: 'Specifies rules for restricting users allowed access to a site.'
+type: module
+core_version_requirement: ">=8"
+package: 'Security'
+configure: entity.user_restrictions.collection
+
+# Information added by Drupal.org packaging script on 2022-01-26
+version: '2.0.0'
+project: 'user_restrictions'
+datestamp: 1643210177

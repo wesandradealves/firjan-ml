@@ -1,0 +1,9 @@
+field_login.settings:
+  path: '/admin/config/people/field-login'
+  defaults:
+    _form: '\Drupal\field_login\Form\FieldLoginSettingsForm'
+    _title: 'Field Login Settings'
+  requirements:
+    _permission: 'administer field login'
+  options:
+    _admin_route: TRUE

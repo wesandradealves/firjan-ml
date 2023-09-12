@@ -1,0 +1,34 @@
+services:
+  access_check.export_exists:
+    class: '\Drupal\eme\Access\DownloadAccessCheck'
+    tags:
+      - { name: access_check, applies_to: _export_exists }
+
+  access_check.temporary_scheme_configured:
+    class: '\Drupal\eme\Access\TemporarySchemeAccessCheck'
+    arguments: ['@stream_wrapper_manager']
+    tags:
+      - { name: access_check, applies_to: _temporary_stream_accessible}
+
+  eme.batch_runner:
+    class: '\Drupal\eme\InterfaceAwareExportBatchRunner'
+
+  logger.channel.eme:
+    parent: logger.channel_base
+    arguments: ['eme']
+
+  eme.export_plugin_manager:
+    class: '\Drupal\eme\Export\ExportPluginManager'
+    arguments:
+      - '@container.namespaces'
+      - '@cache.discovery'
+      - '@module_handler'
+      - '@logger.channel.eme'
+
+  eme.discovery_plugin_manager:
+    class: '\Drupal\eme\ReferenceDiscovery\DiscoveryPluginManager'
+    arguments:
+      - '@container.namespaces'
+      - '@cache.discovery'
+      - '@module_handler'
+      - '@logger.channel.eme'

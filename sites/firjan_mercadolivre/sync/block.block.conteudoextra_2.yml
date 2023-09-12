@@ -1,0 +1,25 @@
+uuid: 4fcefec9-b492-4d13-b45c-f83296d74acf
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_view:12c54449-1114-4f53-a071-cd998c0d01c9'
+  module:
+    - block_content
+  theme:
+    - firjan_mercadolivre
+id: conteudoextra_2
+theme: firjan_mercadolivre
+region: dashboard
+weight: -5
+provider: null
+plugin: 'block_content:12c54449-1114-4f53-a071-cd998c0d01c9'
+settings:
+  id: 'block_content:12c54449-1114-4f53-a071-cd998c0d01c9'
+  label: 'Conteúdo Extra'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

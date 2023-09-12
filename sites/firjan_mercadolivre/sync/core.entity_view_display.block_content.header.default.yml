@@ -1,0 +1,23 @@
+uuid: 8a808270-01af-4bf9-b6ec-9123d140dd81
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header
+    - field.field.block_content.header.field_enable_login
+id: block_content.header.default
+targetEntityType: block_content
+bundle: header
+mode: default
+content:
+  field_enable_login:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

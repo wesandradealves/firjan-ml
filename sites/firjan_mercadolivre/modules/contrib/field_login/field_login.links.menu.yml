@@ -1,0 +1,5 @@
+field_login.settings:
+  title: 'User Field Login Settings'
+  route_name: field_login.settings
+  description: 'Configure field login options.'
+  parent: user.admin_index

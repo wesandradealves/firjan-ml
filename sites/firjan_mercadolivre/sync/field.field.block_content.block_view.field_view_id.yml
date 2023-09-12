@@ -1,0 +1,19 @@
+uuid: 2b185c3c-e549-4354-b2dd-f6077d031edf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_view
+    - field.storage.block_content.field_view_id
+id: block_content.block_view.field_view_id
+field_name: field_view_id
+entity_type: block_content
+bundle: block_view
+label: 'View ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

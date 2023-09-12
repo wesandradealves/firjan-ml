@@ -1,0 +1,23 @@
+uuid: 89a6042c-11ed-4f34-aee1-dce744ec18f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_cta
+    - field.storage.block_content.field_inverse_block_layout
+id: block_content.block_cta.field_inverse_block_layout
+field_name: field_inverse_block_layout
+entity_type: block_content
+bundle: block_cta
+label: 'One line block layout'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: 9f446b4a-724e-4edb-9075-66765909b475
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_access
+id: config_sync.module.content_access
+snapshotSet: config_sync
+extensionType: module
+extensionName: content_access
+items:
+  -
+    collection: ''
+    name: content_access.settings
+    data:
+      content_access_roles_gids: {  }
+      _core:
+        default_config_hash: 7LkiviGITIpniIOOIzpuxR7r4XzqqYN_cwu0fb0kx1M

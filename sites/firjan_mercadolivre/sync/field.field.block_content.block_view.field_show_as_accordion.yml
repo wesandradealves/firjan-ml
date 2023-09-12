@@ -1,0 +1,23 @@
+uuid: 1158afc4-4be7-4272-bdff-2e7f99e1da70
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_view
+    - field.storage.block_content.field_show_as_accordion
+id: block_content.block_view.field_show_as_accordion
+field_name: field_show_as_accordion
+entity_type: block_content
+bundle: block_view
+label: 'Show as accordion'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

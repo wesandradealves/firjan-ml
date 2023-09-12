@@ -1,0 +1,29 @@
+uuid: 004b5049-7578-4949-b8d6-2aabb68f3adf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_form
+    - field.storage.block_content.field_block_template
+    - taxonomy.vocabulary.video_themes
+id: block_content.block_form.field_block_template
+field_name: field_block_template
+entity_type: block_content
+bundle: block_form
+label: 'Block Template'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      video_themes: video_themes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

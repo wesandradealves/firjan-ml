@@ -1,0 +1,26 @@
+<div id="artigos-dossies-podcasts" class="container d-flex flex-wrap align-items-stretch justify-content-between mb-4">
+    <div class="col-12 col-md-4 mb-4 mb-md-0">
+        {% include directory ~ '/templates/partials/accordion/accordion.html.twig' with { 
+            view_display: 'artigos_podcast_dissoie_dashboard',
+            view_block: 'block_article',
+            title: 'Artigos',
+            content: FALSE 
+        } %}   
+    </div>
+    <div class="col-12 col-md-4 mb-4 mb-md-0 ps-md-2 pe-md-2">
+        {% include directory ~ '/templates/partials/accordion/accordion.html.twig' with { 
+            view_display: 'artigos_podcast_dissoie_dashboard',
+            view_block: 'block_2',
+            title: 'Dossiês',
+            content: FALSE 
+        } %}   
+    </div>
+    <div class="col-12 col-md-4 mb-4 mb-md-0">
+        {% include directory ~ '/templates/partials/accordion/accordion.html.twig' with { 
+            view_display: 'artigos_podcast_dissoie_dashboard',
+            view_block: 'block_3',
+            title: 'Podcasts',
+            content: FALSE 
+        } %}   
+    </div>
+</div>

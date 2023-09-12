@@ -1,0 +1,151 @@
+{
+    "name": "drupal/recommended-project",
+    "description": "Project template for Drupal 9 projects with a relocated document root",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-simplexml": "*",
+        "composer/installers": "^1.9",
+        "cweagans/composer-patches": "~1.0",
+        "dpolac/twig-lambda": "*",
+        "drupal/admin_toolbar": "^3.1",
+        "drupal/asset_injector": "^2.12",
+        "drupal/backup_migrate": "^5.0",
+        "drupal/blocache": "^1.1",
+        "drupal/block_content_template": "^1.4",
+        "drupal/config_distro": "^1.0@alpha",
+        "drupal/config_ignore": "^3.0@beta",
+        "drupal/config_merge": "^1.0",
+        "drupal/config_normalizer": "^2.0@alpha",
+        "drupal/config_provider": "^2.0@RC",
+        "drupal/config_snapshot": "^1.0@RC",
+        "drupal/config_update": "^1.7",
+        "drupal/contact_storage": "^1.1",
+        "drupal/content_access": "^1.0@alpha",
+        "drupal/content_sync": "^3.0@beta",
+        "drupal/core-composer-scaffold": "^9.3",
+        "drupal/core-project-message": "^9.3",
+        "drupal/core-recommended": "^9.4",
+        "drupal/devel": "^4.1",
+        "drupal/devel_kint_extras": "^1.0",
+        "drupal/disable_messages": "^2.1",
+        "drupal/eme": "^1.0@alpha",
+        "drupal/entity_reference_revisions": "^1.9",
+        "drupal/excel_importer": "^1.1",
+        "drupal/field_login": "^1.0",
+        "drupal/header_and_footer_scripts": "^3.0",
+        "drupal/jsonapi_extras": "^3.20",
+        "drupal/jsonapi_page_limit": "^1.0@beta",
+        "drupal/libraries": "^3.0@beta",
+        "drupal/login_destination": "^2.0@beta",
+        "drupal/paragraphs": "^1.14",
+        "drupal/pathauto": "^1.11",
+        "drupal/phpmailer_smtp": "^2.1",
+        "drupal/redirect_after_registration": "^1.3",
+        "drupal/reg_confirm_email": "^1.2",
+        "drupal/restui": "^1.20",
+        "drupal/scss_compiler": "^1.1",
+        "drupal/single_content_sync": "^1.3",
+        "drupal/smtp": "^1.2",
+        "drupal/swiftmailer": "^2.4",
+        "drupal/taxonomy_import": "^2.0",
+        "drupal/taxonomy_manager": "^2.0",
+        "drupal/term_csv_export_import": "^3.0@alpha",
+        "drupal/twig_tweak": "^3.1",
+        "drupal/twig_xdebug": "^1.0",
+        "drupal/user_restrictions": "^2.0",
+        "drupal/username_validation": "^1.1",
+        "drush/drush": "^11.2",
+        "html2text/html2text": "^4.3",
+        "swiftmailer/swiftmailer": "^6.3"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+		"optimize-autoloader": true,
+		"prepend-autoloader": false,
+		"platform": {
+			"php": "7.4.33"
+		},        
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "cweagans/composer-patches": true
+        }
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./"
+            }
+        },
+        "installer-paths": {
+            "core": [
+                "type:drupal-core"
+            ],
+            "sites/firjan_mercadolivre/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "sites/firjan_mercadolivre/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "sites/firjan_mercadolivre/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "sites/firjan_mercadolivre/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "sites/firjan_mercadolivre/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "sites/firjan_mercadolivre/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
+            "sites/firjan_mercadolivre/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
+        },
+        "drupal-core-project-message": {
+            "include-keys": [
+                "homepage",
+                "support"
+            ],
+            "post-create-project-cmd-message": [
+                "<bg=blue;fg=white>                                                         </>",
+                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
+                "<bg=blue;fg=white>                                                         </>",
+                "",
+                "<bg=yellow;fg=black>Next steps</>:",
+                "  * Install the site: https://www.drupal.org/docs/8/install",
+                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
+                "  * Get support: https://www.drupal.org/support",
+                "  * Get involved with the Drupal community:",
+                "      https://www.drupal.org/getting-involved",
+                "  * Remove the plugin that prints this message:",
+                "      composer remove drupal/core-project-message"
+            ]
+        }
+    }
+}

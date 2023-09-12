@@ -1,0 +1,309 @@
+<?php
+
+/**
+ * @file
+ * Provides a structure for block cache control.
+ */
+
+use Drupal\block\BlockInterface;
+use Drupal\Component\Render\FormattableMarkup;
+use Drupal\Core\Block\BlockPluginInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function blocache_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the blocache module.
+    case 'help.page.blocache':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a structure for block cache control.') . '</p>';
+      return $output;
+
+    default:
+      return;
+  }
+}
+
+/**
+ * Implements hook_block_build_alter().
+ */
+function blocache_block_build_alter(array &$build, BlockPluginInterface $block) {
+  $block_id = $build['#cache']['keys'][2];
+  $block_entity = Drupal::entityTypeManager()->getStorage('block')->load($block_id);
+
+  if (!($block_entity instanceof BlockInterface)) {
+    return;
+  }
+
+  $blocache_metadata = Drupal::service('blocache.metadata');
+  $blocache_metadata->setBlock($block_entity);
+
+  if ($blocache_metadata->isOverridden()) {
+    $metadata = $blocache_metadata->getMetadata();
+    $build['#cache']['max-age'] = $metadata['max-age'];
+    $build['#cache']['contexts'] = $metadata['contexts'];
+    $build['#cache']['tags'] = $metadata['tags'];
+
+    // This disable page caching wherever this block has been placed.
+    if ($metadata['max-age'] === 0) {
+      \Drupal::service('page_cache_kill_switch')->trigger();
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for block_form.
+ */
+function blocache_form_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $not_modal = !isset($_GET['_wrapper_format']);
+  $admin_block_cache = \Drupal::currentUser()->hasPermission('administer block cache');
+  if ($not_modal && $admin_block_cache) {
+    /*
+     * Retrieves the cache metadata for the current block.
+     */
+    $block = $form_state->getFormObject()->getEntity();
+    $blocache_metadata = Drupal::service('blocache.metadata');
+    $blocache_metadata->setBlock($block);
+    $metadata = $blocache_metadata->getMetadata();
+
+    /*
+     * Defines the container for the blocache fields.
+     */
+    $element['blocache'] = [
+      '#type' => 'container',
+    ];
+
+    $keys = array_keys($form);
+    $index = array_search('visibility', $keys);
+    $pos = $index === FALSE ? count($form) : $index + 1;
+    $form = array_merge(array_slice($form, 0, $pos), $element, array_slice($form, $pos));
+
+    $form['blocache']['container_label'] = [
+      '#type' => 'item',
+      '#title' => t('Cache Settings'),
+    ];
+
+    /*
+     * Defines 'overridden' element.
+     */
+    $form['blocache']['overridden'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Override cacheability metadata'),
+      '#default_value' => (int) $blocache_metadata->isOverridden(),
+    ];
+
+    /*
+     * Defines the 'vertical tabs' element.
+     */
+    $form['blocache']['tabs']['blocache_tabs'] = [
+      '#type' => 'vertical_tabs',
+      '#title' => '',
+      '#parents' => ['blocache_tabs'],
+      '#states' => [
+        'invisible' => [
+          'input[name="blocache[overridden]"]' => [
+            'checked' => FALSE,
+          ],
+        ],
+      ],
+    ];
+
+    /*
+     * Contents of the "Max-Age" tab.
+     */
+    $desc = '<br/>Cache max-age provides a declarative way to create time-dependent caches. ';
+    $desc .= '<a href="https://www.drupal.org/docs/8/api/cache-api/cache-max-age" target="_blank">Read more here.</a><br/>';
+    $desc .= 'A cache max-age is a positive integer, expressing a number of seconds. Examples:<br/><br/>';
+    $desc .= '<strong>60</strong> means cacheable for 60 seconds<br/>';
+    $desc .= '<strong>0</strong> means cacheable for zero seconds, i.e. <strong>not cacheable</strong><br/>';
+    $desc .= '<strong>-1</strong> means cacheable forever, i.e. <strong>this will only ever be invalidated due to cache tags</strong><br/>';
+    $desc = new FormattableMarkup($desc, []);
+
+    $form['blocache']['tabs']['max-age'] = [
+      '#title' => t('Max-Age'),
+      'value' => [
+        '#type' => 'number',
+        '#title' => t('Max-age:'),
+        '#default_value' => $metadata['max-age'],
+        '#min' => -1,
+        '#description' => t('@desc', ['@desc' => $desc]),
+      ],
+    ];
+
+    /*
+     * Contents of the "Contexts" tab.
+     */
+    $info = 'Cache contexts provide a declarative way to create context-dependent variations of ';
+    $info .= 'something that needs to be cached. By making it declarative, code that creates ';
+    $info .= 'caches becomes easier to read, and the same logic doesn\'t need to be repeated in ';
+    $info .= 'every place where the same context variations are necessary. ';
+    $info .= '<a href="https://www.drupal.org/docs/8/api/cache-api/cache-contexts" target="_blank">Read more here.</a><br/><br/>';
+    $info .= '<strong>Available contexts:</strong>';
+    $info = new FormattableMarkup($info, []);
+
+    $form['blocache']['tabs']['contexts'] = [
+      '#title' => t('Contexts'),
+      'info' => [
+        '#markup' => t('@info', ['@info' => $info]),
+      ],
+      'value' => [],
+    ];
+
+    $blocache = Drupal::service('blocache');
+    $contexts = $blocache->cacheContexts();
+    $meta_context = $blocache->prepareContextsFromStorage($metadata['contexts']);
+
+    foreach ($contexts as $id => $context) {
+      $context_enable = 0;
+      $context_arg = '';
+
+      if (isset($meta_context[$id])) {
+        $context_enable = 1;
+        $context_arg = $meta_context[$id];
+      }
+
+      $form['blocache']['tabs']['contexts']['value'][$id] = [
+        '#type' => 'checkbox',
+        '#title' => $id,
+        '#default_value' => $context_enable,
+      ];
+
+      $id_arg = $id . '__arg';
+      if ($context['params']) {
+        $form['blocache']['tabs']['contexts']['value'][$id_arg] = [
+          '#type' => 'textfield',
+          '#title' => t('argument:'),
+          '#default_value' => $context_arg,
+          '#attributes' => [
+            'placeholder' => [':' . implode(', ', $context['params'])],
+          ],
+          '#states' => [
+            'invisible' => [
+              'input[name="blocache[tabs][contexts][value][' . $id . ']"]' => [
+                'checked' => FALSE,
+              ],
+            ],
+          ],
+        ];
+      }
+      else {
+        $form['blocache']['tabs']['contexts']['value'][$id_arg] = [
+          '#type' => 'hidden',
+          '#value' => '',
+        ];
+      }
+    }
+
+    /*
+     * Contents of the "Tag" tab.
+     */
+    $info = 'Cache tags provide a declarative way to track which cache items depend on some data managed by Drupal. ';
+    $info .= '<a href="https://www.drupal.org/docs/8/api/cache-api/cache-tags" target="_blank">Read more here.</a><br/>';
+    $info .= 'By convention, they are of the form thing:identifier — and when there\'s no concept of multiple ';
+    $info .= 'instances of a thing, it is of the form thing. The only rule is that it cannot contain spaces. ';
+    $info .= 'There is no strict syntax.<br/>Examples:<br/>';
+    $info .= '<strong>node:5</strong> — cache tag for Node entity 5 (invalidated whenever it changes)<br/>';
+    $info .= '<strong>user:3</strong> — cache tag for User entity 3 (invalidated whenever it changes)<br/>';
+    $info .= '<strong>config:system.performance</strong> — cache tag for the system.performance configuration<br/>';
+    $info .= '<strong>library_info</strong> — cache tag for asset libraries<br/><br/>';
+    $info .= '<strong>Current tags:</strong>';
+    $info = new FormattableMarkup($info, []);
+
+    $form['blocache']['tabs']['tags'] = [
+      '#title' => t('Tags'),
+      'info' => [
+        '#markup' => t('@info', ['@info' => $info]),
+      ],
+      'value' => [
+        '#type' => 'container',
+        '#prefix' => '<div id="blocache-tags-values">',
+        '#suffix' => '</div>',
+      ],
+      'actions' => [
+        '#type' => 'actions',
+        'add' => [
+          '#type' => 'submit',
+          '#value' => t('Add tag'),
+          '#submit' => ['blocache_add_tag_submit'],
+          '#button_type' => 'default',
+          '#ajax' => [
+            'callback' => 'blocache_add_tag_callback',
+            'event' => 'click',
+            'wrapper' => 'blocache-tags-values',
+            'progress' => [
+              'type' => 'throbber',
+            ],
+          ],
+        ],
+      ],
+    ];
+
+    $count_tags = $form_state->get('count_tags');
+    if ($count_tags === NULL) {
+      $count_tags = count($metadata['tags']);
+      $form_state->set('count_tags', $count_tags);
+    }
+
+    for ($i = 0; $i <= $count_tags; $i++) {
+      $form['blocache']['tabs']['tags']['value'][$i] = [
+        '#type' => 'textfield',
+        '#title' => '',
+        '#default_value' => isset($metadata['tags'][$i]) ? $metadata['tags'][$i] : '',
+      ];
+    }
+
+    /*
+     * Adds tabs to the 'blocache_tabs' element.
+     */
+    foreach ($form['blocache']['tabs'] as $key => $value) {
+      if ($key == 'blocache_tabs') {
+        continue;
+      }
+      $form['blocache']['tabs'][$key]['#group'] = 'blocache_tabs';
+      $form['blocache']['tabs'][$key]['#type'] = 'details';
+    }
+
+    $form['#entity_builders'][] = 'blocache_block_form_builder';
+  }
+}
+
+/**
+ * Ajax callback function for the block form's add tag button.
+ */
+function blocache_add_tag_callback(array &$form, FormStateInterface $form_state) {
+  return $form['blocache']['tabs']['tags']['value'];
+}
+
+/**
+ * Subrmit function for the block form's add tag button.
+ */
+function blocache_add_tag_submit(array &$form, FormStateInterface $form_state) {
+  $count_tags = $form_state->get('count_tags');
+  $form_state->set('count_tags', ++$count_tags);
+  $form_state->setRebuild();
+}
+
+/**
+ * Entity builder function for the block form.
+ */
+function blocache_block_form_builder($entity_type, BlockInterface $block, &$form, FormStateInterface $form_state) {
+  $blocache = Drupal::service('blocache');
+  $blocache_metadata = Drupal::service('blocache.metadata');
+  $blocache_metadata->setBlock($block);
+
+  $values = $form_state->getValue('blocache');
+  if ($values['overridden'] === 1) {
+    $tabs = $values['tabs'];
+    $max_age = (int) $tabs['max-age']['value'];
+    $contexts = $blocache->prepareContextsToStorage($tabs['contexts']['value']);
+    $tags = $tabs['tags']['value'];
+    $blocache_metadata->setOverrides($max_age, $contexts, $tags);
+  }
+  else {
+    $blocache_metadata->unsetOverrides();
+  }
+}

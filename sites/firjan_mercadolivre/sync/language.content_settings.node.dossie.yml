@@ -1,0 +1,11 @@
+uuid: a13b88e6-1c71-466d-88df-25a54aa0e062
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dossie
+id: node.dossie
+target_entity_type_id: node
+target_bundle: dossie
+default_langcode: site_default
+language_alterable: false

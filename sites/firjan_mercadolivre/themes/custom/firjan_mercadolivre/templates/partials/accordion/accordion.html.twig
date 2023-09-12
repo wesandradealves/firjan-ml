@@ -1,0 +1,59 @@
+{%
+  set classes = [
+    'accordion-item',
+  ]
+%}
+
+{% if content and content is iterable %}
+  <ul>
+    {% for index, row in content %}
+      <li{{ attributes.addClass(classes) }}>
+        {% set tid = row['content']['#row']._entity.tid.value %}
+        {% set title = row['content']['#row']._entity.name.value %}
+        {% set background = file_url(row.content['#row']._entity.field_videos_taxonomy_image.entity.uri.value) %}
+        
+        <div class="container">
+          <h2 class="accordion-title mb-5" style="background-image: url({{background}})">
+            <div class="accordion-title-inner p-3 ps-md-5 pe-md-5 d-block">
+              <div class="container d-flex align-items-center flex-row overlay-hidden"><span class="flex-fill">#{{index + 1}} | {{title}}</span> <span class="arrow --off ps-3 d-flex flex-column align-items-end"><i class="fa-solid fa-angle-down"></i></span></div>
+            </div>
+          </h2>
+          <div class="accordion-content">
+            {% if row['content']['#row']._entity.field_descricao.value or row['content']['#row']._entity.field_videos_taxonomy_descricao.value %}
+              <div class="accordion-description">
+                {% if row['content']['#row']._entity.field_videos_taxonomy_descricao.value %}
+                  {{ row['content']['#row']._entity.field_videos_taxonomy_descricao.value|raw }}
+                {% else %}
+                  {{ row['content']['#row']._entity.field_descricao.value }}
+                {% endif %}
+              </div>
+            {% endif %}
+            <ul class="row d-flex flex-row flex-wrap align-items-stretch">
+              {{ drupal_view(view_display, view_block, tid) }}
+            </ul>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <div{{ attributes.addClass(classes|merge(['w-100', 'content-accordion'])) }}>
+    <div class="container p-0">
+      <h2 class="accordion-title mb-4" style="background-image: url({{background}})">
+        <div class="accordion-title-inner p-3 d-block">
+          <div class="container d-flex align-items-center flex-row overlay-hidden"><span class="flex-fill">{{title}}</span> <span class="arrow --off ps-3 d-flex flex-column align-items-end"><i class="fa-solid fa-angle-down"></i></span></div>
+        </div>
+      </h2>
+      <div class="accordion-content">
+        <ul class="row d-flex flex-row flex-wrap align-items-stretch">
+          {{ drupal_view(view_display, view_block) }}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endif %}
+<style>
+  .accordion-title .container::before {
+    background-image: url('{{directory ~ "/images/ico.png"}}')
+  }
+</style>

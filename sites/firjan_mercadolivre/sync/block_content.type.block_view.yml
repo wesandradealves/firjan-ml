@@ -1,0 +1,8 @@
+uuid: 0b9b1b8f-e216-41b1-8e13-7c7be3d8d100
+langcode: en
+status: true
+dependencies: {  }
+id: block_view
+label: 'Block View'
+revision: 0
+description: ''

@@ -1,0 +1,30 @@
+uuid: ef516234-e84b-4711-9c11-5d7382d88a93
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_view:286e9ffd-1997-4e2e-9369-8cb845dc7f9d'
+  module:
+    - block_content
+    - system
+  theme:
+    - firjan_mercadolivre
+id: podcasts
+theme: firjan_mercadolivre
+region: dashboard
+weight: -3
+provider: null
+plugin: 'block_content:286e9ffd-1997-4e2e-9369-8cb845dc7f9d'
+settings:
+  id: 'block_content:286e9ffd-1997-4e2e-9369-8cb845dc7f9d'
+  label: Podcasts
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /dashboard

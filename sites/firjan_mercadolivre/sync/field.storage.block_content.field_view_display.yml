@@ -1,0 +1,21 @@
+uuid: 8bc86b10-3aef-4e6c-a6b4-7931fbd833e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_view_display
+field_name: field_view_display
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

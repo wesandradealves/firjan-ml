@@ -1,0 +1,11 @@
+name: 'Username Validation'
+description: 'This module helps to validate Username with min/max characters, Blacklist characters/words and ajax validations.'
+package: Other
+core_version_requirement: ^9.3 || ^10.0
+type: module
+configure: username_validation.username_validation_config
+
+# Information added by Drupal.org packaging script on 2022-12-20
+version: '8.x-1.2'
+project: 'username_validation'
+datestamp: 1671549681

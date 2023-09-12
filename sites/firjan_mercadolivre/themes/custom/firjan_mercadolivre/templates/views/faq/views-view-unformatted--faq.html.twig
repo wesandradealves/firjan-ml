@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+  {%
+    set row_classes = [
+      'accordion-item',
+      default_row_class ? 'views-row',
+    ]
+  %}
+  <div{{ row.attributes.addClass(row_classes) }}>
+    {% set title = row.content['#row']._entity.title[0].value %}
+    {% set body = row.content['#row']._entity.body[0].value %}
+    {# {{ row.content }} #}
+    <h2 class="accordion-title">
+      <div class="accordion-title-inner p-3 pb-3 ps-md-5 pe-md-5 d-block">
+        <div class="d-flex align-items-center flex-row overlay-hidden"><span class="flex-fill">{{title}}</span> <span class="arrow --off ps-3 d-flex flex-column align-items-end"><i class="fa-solid fa-angle-down"></i></span></div>
+      </div>
+    </h2>
+    <div class="accordion-content p-5">
+      {{body|raw}}
+    </div>    
+  </div>
+{% endfor %}

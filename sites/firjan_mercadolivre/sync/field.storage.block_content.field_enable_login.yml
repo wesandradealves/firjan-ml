@@ -1,0 +1,18 @@
+uuid: 6878f474-787b-4adc-a31d-186a8c36ecec
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_enable_login
+field_name: field_enable_login
+entity_type: block_content
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

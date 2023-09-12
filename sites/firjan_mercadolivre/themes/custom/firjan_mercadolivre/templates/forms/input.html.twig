@@ -1,0 +1,6 @@
+<input{{ attributes.addClass(['form-control']) }} />{{ children }}
+{% if safe_value_label|replace({' ' : ''})|lower == 'login' %}
+    <button  type="button" title="Esqueci minha senha." aria-label="Esqueci minha senha." class="d-block mt-2 modal_toggler">
+        <small data-page="3">Esqueci minha senha.</small>
+    </button>   
+{% endif %}

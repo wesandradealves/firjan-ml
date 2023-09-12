@@ -1,0 +1,24 @@
+uuid: 9b6db117-290c-47cb-99be-752736746e77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data
+    - node.type.dossie
+  module:
+    - datetime
+id: node.dossie.field_data
+field_name: field_data
+entity_type: node
+bundle: dossie
+label: Data
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,31 @@
+uuid: e1709e23-e40f-4fb7-af84-6b25ac825d71
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer
+    - field.storage.block_content.field_social
+    - paragraphs.paragraphs_type.social_networks
+  module:
+    - entity_reference_revisions
+id: block_content.footer.field_social
+field_name: field_social
+entity_type: block_content
+bundle: footer
+label: Social
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      social_networks: social_networks
+    negate: 0
+    target_bundles_drag_drop:
+      social_networks:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

@@ -1,0 +1,30 @@
+uuid: 0751ab1e-44a0-4136-8a57-c40189dc68d8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_view:9eb42321-ef15-4424-992c-4ce2a935953b'
+  module:
+    - block_content
+    - system
+  theme:
+    - firjan_mercadolivre
+id: dossies
+theme: firjan_mercadolivre
+region: dashboard
+weight: -2
+provider: null
+plugin: 'block_content:9eb42321-ef15-4424-992c-4ce2a935953b'
+settings:
+  id: 'block_content:9eb42321-ef15-4424-992c-4ce2a935953b'
+  label: Dossiês
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /dashboard

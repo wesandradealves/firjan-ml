@@ -1,0 +1,25 @@
+block.block.*.third_party.blocache:
+  type: mapping
+  label: Blocache third party settings
+  mapping:
+    overridden:
+      type: boolean
+      label: Overridden cache metadata
+    metadata:
+      type: mapping
+      label: Cache Metadata
+      mapping:
+        max-age:
+          type: integer
+          label: Max-Age
+        contexts:
+          type: sequence
+          label: Contexts
+          sequence:
+            type: string
+        tags:
+          type: sequence
+          label: Tags
+          sequence:
+            type: string
+

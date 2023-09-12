@@ -1,0 +1,19 @@
+uuid: 963f87e6-c10c-4b24-9aea-9939ceca5546
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_whitelist_vinculo
+    - taxonomy.vocabulary.whitelist
+id: taxonomy_term.whitelist.field_whitelist_vinculo
+field_name: field_whitelist_vinculo
+entity_type: taxonomy_term
+bundle: whitelist
+label: Vínculo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

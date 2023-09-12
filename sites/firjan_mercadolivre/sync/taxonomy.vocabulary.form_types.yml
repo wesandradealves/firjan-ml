@@ -1,0 +1,8 @@
+uuid: ab50e7b1-3ba2-4272-b8ad-ae64acd7f5f8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Form Types'
+vid: form_types
+description: 'Taxonomy for form types'
+weight: 0

@@ -1,0 +1,8 @@
+uuid: 94b0057f-10ad-4069-93ea-6487d1e71b27
+langcode: en
+status: true
+dependencies: {  }
+name: Whitelist
+vid: whitelist
+description: ''
+weight: 0

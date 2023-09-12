@@ -1,0 +1,30 @@
+uuid: 858ffb4a-1e07-44eb-b48f-721fb1046d77
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_view:8365d651-0897-4cbb-a0d2-41ef80f67bea'
+  module:
+    - block_content
+    - system
+  theme:
+    - firjan_mercadolivre
+id: conteudoextra
+theme: firjan_mercadolivre
+region: dashboard
+weight: -1
+provider: null
+plugin: 'block_content:8365d651-0897-4cbb-a0d2-41ef80f67bea'
+settings:
+  id: 'block_content:8365d651-0897-4cbb-a0d2-41ef80f67bea'
+  label: "Produtos Firjan com valor especial para associados\t"
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/dashboard\r\n<front>"

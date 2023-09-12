@@ -1,0 +1,10 @@
+uuid: 0d8f0cda-dbe5-494b-9e31-a78fad4e339d
+langcode: en
+status: true
+dependencies: {  }
+id: alert_box
+label: 'Alert Box'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
